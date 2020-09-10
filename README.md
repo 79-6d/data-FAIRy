@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Data-FAIRy
 
 The FAIRy you summon to do your data laundry!

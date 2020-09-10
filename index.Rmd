@@ -1,0 +1,12 @@
+--- 
+title: "Data FAIRy"
+author: "Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+description: "Biological data publishing guidelines"
+---
+
+# About this
+
+Mirror mirror on the wall, who is the FAIRest of all?

@@ -8,6 +8,25 @@ We have been cleaning a lot of biological datasets from various expeditions to m
 
 So we decided to compile our experiences into Data-FAIRy to help both researchers and data managers gain time by learning from each others.
 
+## How to build this book locally 
+
+This material has been written using [bookdown](https://github.com/rstudio/bookdown) and [R](https://cran.r-project.org/). The dependencies of this project is managed using [packrat](https://rstudio.github.io/packrat/).
+
+To build the book locally, clone the [repo](https://github.com/79-6d/data-fairy.git).
+
+If dependencies are not automatically installed by `packrat` when you open `data-fairy.Rproj`, try the following command.
+
+```{r eval = FALSE}
+packrat::restore()
+```
+
+then run the following lines:
+
+```{r eval = FALSE}
+library(here)
+setwd(here())  # set working directory to project root directory 
+bookdown::render_book("index.Rmd")
+```
 
 ## License
 

@@ -7,6 +7,25 @@ documentclass: book
 description: "Biological data publishing guidelines"
 ---
 
-# About this
+# About {-}
 
-Mirror mirror on the wall, who is the FAIRest of all?
+This document serves to guide researchers who wish to manage the biological data from their scientific expedition
+
+Issues or suggestions about the content can be raised through the [issue tracker](https://github.com/79-6d/data-fairy/issues) (GitHub account required).
+
+## How to build this book locally {-}
+
+This material has been written using [bookdown](https://github.com/rstudio/bookdown) and [R](https://cran.r-project.org/). The dependencies of this project is managed using [packrat](https://rstudio.github.io/packrat/).
+
+To build the book locally, clone the [repo](https://github.com/79-6d/data-fairy.git), open R and run the following lines:
+
+```{r eval = FALSE}
+library(here)
+setwd(here())  # set working directory to project root directory 
+bookdown::render_book("index.Rmd")
+```
+
+And view it with:
+```{r eval = FALSE}
+browseURL("docs/index.html")
+```

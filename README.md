@@ -16,16 +16,22 @@ To build the book locally, clone the [repo](https://github.com/79-6d/data-fairy.
 
 If dependencies are not automatically installed by `packrat` when you open `data-fairy.Rproj`, try the following command.
 
-```{r eval = FALSE}
+```{r}
 packrat::restore()
 ```
 
 then run the following lines:
 
-```{r eval = FALSE}
+```{r}
 library(here)
 setwd(here())  # set working directory to project root directory 
 bookdown::render_book("index.Rmd")
+```
+
+And view it with:
+
+```{r}
+browseURL("docs/index.html")
 ```
 
 ## License

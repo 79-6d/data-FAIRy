@@ -15,7 +15,9 @@ For non-human specimen images, [Zenodo](https://zenodo.org/) is a good option to
 
 #### Upload {-}
 
-If you have plenty of images, uploading one folder containing all your images for one specific dataset (corresponds to your dataset that will be published via [IPT](ipt.biodiversity.aq)) is the easiest approach. 
+If you have plenty of images, uploading one folder containing all of your images for one specific dataset (corresponds to your dataset that will be published via [IPT](ipt.biodiversity.aq)) is the easiest approach. 
+
+Please ensure that the file names for your images corresponds to your data record in IPT so that the information is properly linked.
 
 #### Communities {-}
 

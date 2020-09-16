@@ -174,9 +174,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If dependencies are not automatically installed by <code>renv</code> when you open <code>data-fairy.Rproj</code>, try the following command.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>renv<span class="op">::</span><span class="kw">restore</span>()</span></code></pre></div>
 <p>then run the following lines to build the book:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">library</span>(here)</span>
-<span id="cb2-2"><a href="index.html#cb2-2"></a><span class="kw">setwd</span>(<span class="kw">here</span>())  <span class="co"># set working directory to project root directory </span></span>
-<span id="cb2-3"><a href="index.html#cb2-3"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">setwd</span>(<span class="kw">here</span>())  <span class="co"># set working directory to project root directory </span></span>
+<span id="cb2-2"><a href="index.html#cb2-2"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span></code></pre></div>
 <p>And view it with:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="index.html#cb3-1"></a><span class="kw">browseURL</span>(<span class="st">&quot;docs/index.html&quot;</span>)</span></code></pre></div>
 

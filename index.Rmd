@@ -27,8 +27,11 @@ renv::restore()
 
 then run the following lines to build the book:
 
+```{r echo=FALSE}
+library(here)  # placed in separate chunk so that renv picks up the pkg
+```
+
 ```{r eval=FALSE}
-library(here)
 setwd(here())  # set working directory to project root directory 
 bookdown::render_book("index.Rmd")
 ```

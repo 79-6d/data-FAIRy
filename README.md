@@ -10,17 +10,17 @@ So we decided to compile our experiences into Data-FAIRy to help both researcher
 
 ## How to build this book locally 
 
-This material has been written using [bookdown](https://github.com/rstudio/bookdown) and [R](https://cran.r-project.org/). The dependencies of this project is managed using [packrat](https://rstudio.github.io/packrat/).
+This material has been written using [bookdown](https://github.com/rstudio/bookdown) and [R](https://cran.r-project.org/). The dependencies of this project is managed using [renv](https://rstudio.github.io/renv/).
 
 To build the book locally, clone the [repo](https://github.com/79-6d/data-fairy.git).
 
-If dependencies are not automatically installed by `packrat` when you open `data-fairy.Rproj`, try the following command.
+If dependencies are not automatically installed by `renv` when you open `data-fairy.Rproj`, try the following command.
 
 ```{r}
-packrat::restore()
+renv::restore()
 ```
 
-then run the following lines:
+then run the following lines to build the book:
 
 ```{r}
 library(here)

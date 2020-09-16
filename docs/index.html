@@ -24,7 +24,7 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2020-09-14" />
+<meta name="date" content="2020-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Data FAIRy</h1>
 <p class="author"><em>Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove</em></p>
-<p class="date"><em>2020-09-14</em></p>
+<p class="date"><em>2020-09-16</em></p>
 </div>
 <div id="about" class="section level1 unnumbered">
 <h1>About</h1>
@@ -169,11 +169,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Issues or suggestions about the content can be raised through the <a href="https://github.com/79-6d/data-fairy/issues">issue tracker</a> (GitHub account required).</p>
 <div id="how-to-build-this-book-locally" class="section level2 unnumbered">
 <h2>How to build this book locally</h2>
-<p>This material has been written using <a href="https://github.com/rstudio/bookdown">bookdown</a> and <a href="https://cran.r-project.org/">R</a>. The dependencies of this project is managed using <a href="https://rstudio.github.io/packrat/">packrat</a>.</p>
+<p>This material has been written using <a href="https://github.com/rstudio/bookdown">bookdown</a> and <a href="https://cran.r-project.org/">R</a>. The dependencies of this project is managed using <a href="https://rstudio.github.io/renv/">renv</a>.</p>
 <p>To build the book locally, clone the <a href="https://github.com/79-6d/data-fairy.git">repo</a>.</p>
-<p>If dependencies are not automatically installed by <code>packrat</code> when you open <code>data-fairy.Rproj</code>, try the following command.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>packrat<span class="op">::</span><span class="kw">restore</span>()</span></code></pre></div>
-<p>then run the following lines:</p>
+<p>If dependencies are not automatically installed by <code>renv</code> when you open <code>data-fairy.Rproj</code>, try the following command.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a>renv<span class="op">::</span><span class="kw">restore</span>()</span></code></pre></div>
+<p>then run the following lines to build the book:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1"></a><span class="kw">library</span>(here)</span>
 <span id="cb2-2"><a href="index.html#cb2-2"></a><span class="kw">setwd</span>(<span class="kw">here</span>())  <span class="co"># set working directory to project root directory </span></span>
 <span id="cb2-3"><a href="index.html#cb2-3"></a>bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>)</span></code></pre></div>

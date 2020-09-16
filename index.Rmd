@@ -15,26 +15,27 @@ Issues or suggestions about the content can be raised through the [issue tracker
 
 ## How to build this book locally {-}
 
-This material has been written using [bookdown](https://github.com/rstudio/bookdown) and [R](https://cran.r-project.org/). The dependencies of this project is managed using [packrat](https://rstudio.github.io/packrat/).
+This material has been written using [bookdown](https://github.com/rstudio/bookdown) and [R](https://cran.r-project.org/). The dependencies of this project is managed using [renv](https://rstudio.github.io/renv/).
 
 To build the book locally, clone the [repo](https://github.com/79-6d/data-fairy.git).
 
-If dependencies are not automatically installed by `packrat` when you open `data-fairy.Rproj`, try the following command.
+If dependencies are not automatically installed by `renv` when you open `data-fairy.Rproj`, try the following command.
 
-```{r eval = FALSE}
-packrat::restore()
+```{r eval=FALSE}
+renv::restore()
 ```
 
-then run the following lines:
+then run the following lines to build the book:
 
-```{r eval = FALSE}
+```{r eval=FALSE}
 library(here)
 setwd(here())  # set working directory to project root directory 
 bookdown::render_book("index.Rmd")
 ```
 
 And view it with:
-```{r eval = FALSE}
+
+```{r}
 browseURL("docs/index.html")
 ```
 

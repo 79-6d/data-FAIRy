@@ -1,0 +1,22 @@
+# Data input
+
+## Data templates
+
+List of biodiversity data templates to record data team can be found in this [GitHub repository](https://github.com/data-biodiversity-aq/data-mgt-templates).
+
+Webinar and slides are available at [the portal page](https://www.biodiversity.aq/how-to/webinar-series-biodiversity-data-field-research/)
+
+## Consideration when input data
+
+Summary with good and bad examples
+
+### Identifiers
+
+### Geographical data
+
+### Temporal data
+
+### Species data
+
+### Measurement data
+

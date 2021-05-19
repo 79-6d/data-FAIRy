@@ -1,8 +1,22 @@
-# Multimedia files
+# Publish your biodiversity data
+
+Types of data and publication methods. 
+
+## Darwin Core archive
+
+Publish Darwin Core archive with IPT
+
+### Dataset metadata (EML)
+
+### Core and extension files
+
+
+
+## Multimedia files
 
 Where to publish your multimedia files?
 
-## Specimen images
+### Specimen images
 
 For non-human specimen images, [Zenodo](https://zenodo.org/) is a good option to host your images because:
 
@@ -11,7 +25,7 @@ For non-human specimen images, [Zenodo](https://zenodo.org/) is a good option to
 - huge data storage space 
 - and [much more](https://help.zenodo.org/features/)
 
-### Publishing with Zenodo {-}
+#### Publishing with Zenodo {-}
 
 #### Upload {-}
 

@@ -1,0 +1,16 @@
+# Data quality control
+
+Summary workflow with diagram
+
+## Quality control procedures and tools
+
+### Identifiers
+
+### Geographical data
+
+### Temporal data
+
+### Species data
+
+### Measurement data
+

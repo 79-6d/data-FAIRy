@@ -1,0 +1,21 @@
+# Darwin Core
+
+## Minimum information required for Darwin Core standard
+
+Terms | [Occurrence]() | [Sampling Event]() | [Species checklist]()
+---|---|---|---
+[occurrenceID]() | x | | 
+[basisOfRecord]() | x | |
+
+## Types of core data in Darwin Core
+
+### Occurrence
+
+### Sampling Event
+
+### Species checklist
+
+## Mandatory fields
+
+## Recommended fields
+

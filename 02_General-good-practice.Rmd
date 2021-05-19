@@ -1,0 +1,7 @@
+# General good practice
+
+## Project management
+
+### Naming files
+
+

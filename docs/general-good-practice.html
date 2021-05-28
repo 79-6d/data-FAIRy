@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="introduction.html"/>
-<link rel="next" href="darwin-core.html"/>
+<link rel="next" href="tidy-data.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -142,20 +142,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="general-good-practice.html"><a href="general-good-practice.html#give-good-names-to-files"><i class="fa fa-check"></i><b>2.2</b> Give good names to files</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="general-good-practice.html"><a href="general-good-practice.html#summary-1"><i class="fa fa-check"></i><b>2.2.1</b> Summary</a></li>
 <li class="chapter" data-level="2.2.2" data-path="general-good-practice.html"><a href="general-good-practice.html#machine-readable"><i class="fa fa-check"></i><b>2.2.2</b> <span>Machine readable</span></a></li>
-<li class="chapter" data-level="2.2.3" data-path="general-good-practice.html"><a href="general-good-practice.html#regular-expression-and-globbing-friendly"><i class="fa fa-check"></i><b>2.2.3</b> Regular expression and globbing friendly</a></li>
-<li class="chapter" data-level="2.2.4" data-path="general-good-practice.html"><a href="general-good-practice.html#human-readable"><i class="fa fa-check"></i><b>2.2.4</b> <span>Human readable</span></a></li>
-<li class="chapter" data-level="2.2.5" data-path="general-good-practice.html"><a href="general-good-practice.html#orderable"><i class="fa fa-check"></i><b>2.2.5</b> <span>Orderable</span></a></li>
+<li class="chapter" data-level="2.2.3" data-path="general-good-practice.html"><a href="general-good-practice.html#human-readable"><i class="fa fa-check"></i><b>2.2.3</b> <span>Human readable</span></a></li>
+<li class="chapter" data-level="2.2.4" data-path="general-good-practice.html"><a href="general-good-practice.html#orderable"><i class="fa fa-check"></i><b>2.2.4</b> <span>Orderable</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="darwin-core.html"><a href="darwin-core.html"><i class="fa fa-check"></i><b>3</b> Darwin Core</a><ul>
-<li class="chapter" data-level="3.1" data-path="darwin-core.html"><a href="darwin-core.html#minimum-information-required-for-darwin-core-standard"><i class="fa fa-check"></i><b>3.1</b> Minimum information required for Darwin Core standard</a></li>
-<li class="chapter" data-level="3.2" data-path="darwin-core.html"><a href="darwin-core.html#types-of-core-data-in-darwin-core"><i class="fa fa-check"></i><b>3.2</b> Types of core data in Darwin Core</a><ul>
-<li class="chapter" data-level="3.2.1" data-path="darwin-core.html"><a href="darwin-core.html#occurrence"><i class="fa fa-check"></i><b>3.2.1</b> Occurrence</a></li>
-<li class="chapter" data-level="3.2.2" data-path="darwin-core.html"><a href="darwin-core.html#sampling-event"><i class="fa fa-check"></i><b>3.2.2</b> Sampling Event</a></li>
-<li class="chapter" data-level="3.2.3" data-path="darwin-core.html"><a href="darwin-core.html#species-checklist"><i class="fa fa-check"></i><b>3.2.3</b> Species checklist</a></li>
-</ul></li>
-<li class="chapter" data-level="3.3" data-path="darwin-core.html"><a href="darwin-core.html#mandatory-fields"><i class="fa fa-check"></i><b>3.3</b> Mandatory fields</a></li>
-<li class="chapter" data-level="3.4" data-path="darwin-core.html"><a href="darwin-core.html#recommended-fields"><i class="fa fa-check"></i><b>3.4</b> Recommended fields</a></li>
+<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy data</a><ul>
+<li class="chapter" data-level="3.1" data-path="general-good-practice.html"><a href="general-good-practice.html#summary"><i class="fa fa-check"></i><b>3.1</b> Summary</a></li>
+<li class="chapter" data-level="3.2" data-path="tidy-data.html"><a href="tidy-data.html#what-is-tidy-data"><i class="fa fa-check"></i><b>3.2</b> What is Tidy data?</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="data-input.html"><a href="data-input.html"><i class="fa fa-check"></i><b>4</b> Data input</a><ul>
 <li class="chapter" data-level="4.1" data-path="data-input.html"><a href="data-input.html#data-templates"><i class="fa fa-check"></i><b>4.1</b> Data templates</a></li>
@@ -235,7 +228,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 └── reports            &lt;- Generated QC reports.
     └── figures        &lt;- Generated graphics and figures to be used in reporting.</code></pre>
 <p><em>Adapted from Python’s version from Cookiecutter Data Science <a href="https://drivendata.github.io/cookiecutter-data-science/" class="uri">https://drivendata.github.io/cookiecutter-data-science/</a> accessed on 2020-10-29</em></p>
-<p><strong>Bad directory structure</strong></p>
 </div>
 </div>
 <div id="give-good-names-to-files" class="section level2">
@@ -261,9 +253,7 @@ nJ7UyiE*.txt
 </div>
 <div id="machine-readable" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> <a href="general-good-practice.html#machine-readable">Machine readable</a></h3>
-</div>
-<div id="regular-expression-and-globbing-friendly" class="section level3">
-<h3><span class="header-section-number">2.2.3</span> Regular expression and globbing friendly</h3>
+<p>Regular expression and globbing friendly</p>
 <p>Avoid:
 - special characters
 - spaces
@@ -290,7 +280,7 @@ nJ7UyiE*.txt
 2020-08-12_PS122-5_Arctic-Ocean.pdf</code></pre>
 </div>
 <div id="human-readable" class="section level3">
-<h3><span class="header-section-number">2.2.4</span> <a href="general-good-practice.html#human-readable">Human readable</a></h3>
+<h3><span class="header-section-number">2.2.3</span> <a href="general-good-practice.html#human-readable">Human readable</a></h3>
 <ul>
 <li>Names that tells you about the file content.</li>
 <li>Utilize the slug concept from semantic URLs.</li>
@@ -301,7 +291,7 @@ nJ7UyiE*.txt
 2019-04-23_r_dplyr.pdf</code></pre>
 </div>
 <div id="orderable" class="section level3">
-<h3><span class="header-section-number">2.2.5</span> <a href="general-good-practice.html#orderable">Orderable</a></h3>
+<h3><span class="header-section-number">2.2.4</span> <a href="general-good-practice.html#orderable">Orderable</a></h3>
 <ul>
 <li>File names that start with numbers.</li>
 <li>ISO 8601 standard for dates.</li>
@@ -338,7 +328,7 @@ nJ7UyiE*.txt
         </div>
       </div>
 <a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="darwin-core.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tidy-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

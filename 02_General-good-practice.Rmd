@@ -30,9 +30,6 @@
 ```
 _Adapted from Python’s version from Cookiecutter Data Science https://drivendata.github.io/cookiecutter-data-science/ accessed on 2020-10-29_
 
-**Bad directory structure** 
-
-
 
 ## Give good names to files
 
@@ -65,7 +62,7 @@ See more: https://speakerdeck.com/jennybc/how-to-name-files
 
 ### [Machine readable](#machine-readable)
 
-### Regular expression and globbing friendly
+Regular expression and globbing friendly
 
 Avoid: 
 - special characters

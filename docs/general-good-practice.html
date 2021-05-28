@@ -24,7 +24,7 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2021-05-19" />
+<meta name="date" content="2021-05-28" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,8 +136,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="general-good-practice.html"><a href="general-good-practice.html"><i class="fa fa-check"></i><b>2</b> General good practice</a><ul>
-<li class="chapter" data-level="2.1" data-path="general-good-practice.html"><a href="general-good-practice.html#project-management"><i class="fa fa-check"></i><b>2.1</b> Project management</a><ul>
-<li class="chapter" data-level="2.1.1" data-path="general-good-practice.html"><a href="general-good-practice.html#naming-files"><i class="fa fa-check"></i><b>2.1.1</b> Naming files</a></li>
+<li class="chapter" data-level="2.1" data-path="general-good-practice.html"><a href="general-good-practice.html#project-directory-management"><i class="fa fa-check"></i><b>2.1</b> Project directory management</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="general-good-practice.html"><a href="general-good-practice.html#summary"><i class="fa fa-check"></i><b>2.1.1</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="general-good-practice.html"><a href="general-good-practice.html#give-good-names-to-files"><i class="fa fa-check"></i><b>2.2</b> Give good names to files</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="general-good-practice.html"><a href="general-good-practice.html#summary-1"><i class="fa fa-check"></i><b>2.2.1</b> Summary</a></li>
+<li class="chapter" data-level="2.2.2" data-path="general-good-practice.html"><a href="general-good-practice.html#machine-readable"><i class="fa fa-check"></i><b>2.2.2</b> <span>Machine readable</span></a></li>
+<li class="chapter" data-level="2.2.3" data-path="general-good-practice.html"><a href="general-good-practice.html#regular-expression-and-globbing-friendly"><i class="fa fa-check"></i><b>2.2.3</b> Regular expression and globbing friendly</a></li>
+<li class="chapter" data-level="2.2.4" data-path="general-good-practice.html"><a href="general-good-practice.html#human-readable"><i class="fa fa-check"></i><b>2.2.4</b> <span>Human readable</span></a></li>
+<li class="chapter" data-level="2.2.5" data-path="general-good-practice.html"><a href="general-good-practice.html#orderable"><i class="fa fa-check"></i><b>2.2.5</b> <span>Orderable</span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="darwin-core.html"><a href="darwin-core.html"><i class="fa fa-check"></i><b>3</b> Darwin Core</a><ul>
@@ -202,10 +209,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="general-good-practice" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> General good practice</h1>
-<div id="project-management" class="section level2">
-<h2><span class="header-section-number">2.1</span> Project management</h2>
-<div id="naming-files" class="section level3">
-<h3><span class="header-section-number">2.1.1</span> Naming files</h3>
+<div id="project-directory-management" class="section level2">
+<h2><span class="header-section-number">2.1</span> Project directory management</h2>
+<div id="summary" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Summary</h3>
+<p><strong>Good project structure</strong></p>
+<pre><code>├── README.md          &lt;- The top-level README.
+├── data
+│   ├── external       &lt;- Data from third party sources.
+│   ├── interim        &lt;- Intermediate data that has been transformed.
+│   ├── processed      &lt;- The final, canonical data sets for modeling.
+│   └── raw            &lt;- The original, immutable data dump.
+│
+├── references         &lt;- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── src                &lt;- Source code for use in this project.
+│   ├── data           &lt;- Scripts to download or generate data.
+│   │   └── make_dataset.R
+│   │
+│   ├── clean          &lt;- Scripts to clean data.
+│   │   └── clean_dataset.R
+│   │
+│   └── visualization  &lt;- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.R
+└── reports            &lt;- Generated QC reports.
+    └── figures        &lt;- Generated graphics and figures to be used in reporting.</code></pre>
+<p><em>Adapted from Python’s version from Cookiecutter Data Science <a href="https://drivendata.github.io/cookiecutter-data-science/" class="uri">https://drivendata.github.io/cookiecutter-data-science/</a> accessed on 2020-10-29</em></p>
+<p><strong>Bad directory structure</strong></p>
+</div>
+</div>
+<div id="give-good-names-to-files" class="section level2">
+<h2><span class="header-section-number">2.2</span> Give good names to files</h2>
+<div id="summary-1" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Summary</h3>
+<p>Good file names are:</p>
+<ul>
+<li><a href="general-good-practice.html#machine-readable">machine readable</a></li>
+<li><a href="general-good-practice.html#human-readable">human readable</a></li>
+<li><a href="general-good-practice.html#orderable">orderable</a></li>
+</ul>
+<p><strong>Good names</strong></p>
+<pre><code>2021-05-20_antarctic-penguins.txt
+001-248231_myctophidae-gill.jpg
+southern-ocean-jellyfish.docx</code></pre>
+<p><strong>Bad names</strong></p>
+<pre><code>1.txt 
+thesis final_Final_FINAL.docx 
+nJ7UyiE*.txt 
+ça va.txt</code></pre>
+<p>See more: <a href="https://speakerdeck.com/jennybc/how-to-name-files" class="uri">https://speakerdeck.com/jennybc/how-to-name-files</a></p>
+</div>
+<div id="machine-readable" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> <a href="general-good-practice.html#machine-readable">Machine readable</a></h3>
+</div>
+<div id="regular-expression-and-globbing-friendly" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Regular expression and globbing friendly</h3>
+<p>Avoid:
+- special characters
+- spaces
+- punctuation
+- accented characters
+- case sensitivity</p>
+<p>Use:
+- delimiters</p>
+<p>File names follow the patterns:</p>
+<p><code>&lt;date&gt;_&lt;cruise-number&gt;_&lt;location&gt;.pdf</code></p>
+<ul>
+<li><code>_</code> hyphen delimits units of metadata</li>
+<li><code>-</code> underscore delimits words for readability</li>
+</ul>
+<pre><code>~/Desktop/projects/01_cruise-reports ᐅ ls
+2018-12-15_PS117_Cape-Town.pdf
+2019-02-09_PS118_Punta-Arenas.pdf
+2019-04-13_PS119_Punta-Arenas.pdf
+2020-06-04_PS122-4_Arctic-Ocean.pdf
+2020-08-12_PS122-5_Arctic-Ocean.pdf</code></pre>
+<p>Using globbing/regular expression to narrow file listing:</p>
+<pre><code>~/Desktop/projects/01_cruise-reports ᐅ ls *Arctic*
+2020-06-04_PS122-4_Arctic-Ocean.pdf
+2020-08-12_PS122-5_Arctic-Ocean.pdf</code></pre>
+</div>
+<div id="human-readable" class="section level3">
+<h3><span class="header-section-number">2.2.4</span> <a href="general-good-practice.html#human-readable">Human readable</a></h3>
+<ul>
+<li>Names that tells you about the file content.</li>
+<li>Utilize the slug concept from semantic URLs.</li>
+</ul>
+<pre><code>2019-01-24_gis_vector.pdf
+2019-02-12_gis_maps.pdf
+2019-03-16_r_ggplot.pdf
+2019-04-23_r_dplyr.pdf</code></pre>
+</div>
+<div id="orderable" class="section level3">
+<h3><span class="header-section-number">2.2.5</span> <a href="general-good-practice.html#orderable">Orderable</a></h3>
+<ul>
+<li>File names that start with numbers.</li>
+<li>ISO 8601 standard for dates.</li>
+<li>left pad other numbers with zero(s).</li>
+</ul>
+<p>Meaningful names start with numbers allow files to be sorted chronologically. Note that date is in ISO 8601 standard format (YYYY-MM-DD).</p>
+<pre><code>2020-01-14_team-meeting-minutes.txt
+2020-02-21_team-meeting-minutes.txt
+2020-02-22_managers-meeting-minutes.txt
+2020-03-16_team-meeting-minutes.txt</code></pre>
+<p>If date is in other format such as (DD-MM-YYYY), sorting the files does not provide chronological order of events.</p>
+<pre><code>14-01-2020_team-meeting-minutes.txt
+16-03-2020_team-meeting-minutes.txt
+21-02-2020_team-meeting-minutes.txt
+22-02-2020_managers-meeting-minutes.txt</code></pre>
+<p>If files are not meaningful when ordered with date, they can be named with numeric characters first. For instance, a folder of images to be added into another document following a certain sequence.</p>
+<pre><code>001_myctophidae_diaphus-adenomus.jpg
+002_myctophidae_diaphus-agassizii.jpg
+...
+010_myctophidae_diaphus-danae.jpg
+011_myctophidae_diaphus-fragilis.jpg</code></pre>
+<p>If the file names are not left pad with zeros, the order will not be desirable.</p>
+<pre><code>10_myctophidae_diaphus-danae.jpg
+1_myctophidae_diaphus-adenomus.jpg
+11_myctophidae_diaphus-fragilis.jpg
+2_myctophidae_diaphus-agassizii.jpg</code></pre>
 
 </div>
 </div>

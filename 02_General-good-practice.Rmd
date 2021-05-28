@@ -1,7 +1,162 @@
 # General good practice
 
-## Project management
+## Project directory management
 
-### Naming files
+### Summary
+
+**Good project structure**
+
+```
+├── README.md          <- The top-level README.
+├── data
+│   ├── external       <- Data from third party sources.
+│   ├── interim        <- Intermediate data that has been transformed.
+│   ├── processed      <- The final, canonical data sets for modeling.
+│   └── raw            <- The original, immutable data dump.
+│
+├── references         <- Data dictionaries, manuals, and all other explanatory materials.
+│
+├── src                <- Source code for use in this project.
+│   ├── data           <- Scripts to download or generate data.
+│   │   └── make_dataset.R
+│   │
+│   ├── clean          <- Scripts to clean data.
+│   │   └── clean_dataset.R
+│   │
+│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
+│       └── visualize.R
+└── reports            <- Generated QC reports.
+    └── figures        <- Generated graphics and figures to be used in reporting.
+```
+_Adapted from Python’s version from Cookiecutter Data Science https://drivendata.github.io/cookiecutter-data-science/ accessed on 2020-10-29_
+
+**Bad directory structure** 
+
+
+
+## Give good names to files
+
+### Summary
+
+Good file names are:
+
+- [machine readable](#machine-readable)
+- [human readable](#human-readable)
+- [orderable](#orderable)
+
+**Good names**
+
+```
+2021-05-20_antarctic-penguins.txt
+001-248231_myctophidae-gill.jpg
+southern-ocean-jellyfish.docx
+```
+
+**Bad names**
+
+```
+1.txt 
+thesis final_Final_FINAL.docx 
+nJ7UyiE*.txt 
+ça va.txt
+```
+
+See more: https://speakerdeck.com/jennybc/how-to-name-files
+
+### [Machine readable](#machine-readable)
+
+### Regular expression and globbing friendly
+
+Avoid: 
+- special characters
+- spaces
+- punctuation
+- accented characters
+- case sensitivity
+
+Use:
+- delimiters
+
+File names follow the patterns:
+
+`<date>_<cruise-number>_<location>.pdf`
+
+- `_` hyphen delimits units of metadata
+- `-` underscore delimits words for readability
+
+```
+~/Desktop/projects/01_cruise-reports ᐅ ls
+2018-12-15_PS117_Cape-Town.pdf
+2019-02-09_PS118_Punta-Arenas.pdf
+2019-04-13_PS119_Punta-Arenas.pdf
+2020-06-04_PS122-4_Arctic-Ocean.pdf
+2020-08-12_PS122-5_Arctic-Ocean.pdf
+```
+
+Using globbing/regular expression to narrow file listing:
+
+```
+~/Desktop/projects/01_cruise-reports ᐅ ls *Arctic*
+2020-06-04_PS122-4_Arctic-Ocean.pdf
+2020-08-12_PS122-5_Arctic-Ocean.pdf
+```
+
+### [Human readable](#human-readable)
+
+- Names that tells you about the file content.
+- Utilize the slug concept from semantic URLs.
+
+```
+2019-01-24_gis_vector.pdf
+2019-02-12_gis_maps.pdf
+2019-03-16_r_ggplot.pdf
+2019-04-23_r_dplyr.pdf
+```
+
+### [Orderable](#orderable)
+
+- File names that start with numbers.
+- ISO 8601 standard for dates.
+- left pad other numbers with zero(s).
+
+Meaningful names start with numbers allow files to be sorted chronologically. Note that date is in ISO 8601 standard format (YYYY-MM-DD).
+
+```
+2020-01-14_team-meeting-minutes.txt
+2020-02-21_team-meeting-minutes.txt
+2020-02-22_managers-meeting-minutes.txt
+2020-03-16_team-meeting-minutes.txt
+```
+
+If date is in other format such as (DD-MM-YYYY), sorting the files does not provide chronological order of events.
+
+```
+14-01-2020_team-meeting-minutes.txt
+16-03-2020_team-meeting-minutes.txt
+21-02-2020_team-meeting-minutes.txt
+22-02-2020_managers-meeting-minutes.txt
+```
+
+If files are not meaningful when ordered with date, they can be named with numeric characters first. For instance, a folder of images to be added into another document following a certain sequence.
+
+```
+001_myctophidae_diaphus-adenomus.jpg
+002_myctophidae_diaphus-agassizii.jpg
+...
+010_myctophidae_diaphus-danae.jpg
+011_myctophidae_diaphus-fragilis.jpg
+```
+
+If the file names are not left pad with zeros, the order will not be desirable.
+
+```
+10_myctophidae_diaphus-danae.jpg
+1_myctophidae_diaphus-adenomus.jpg
+11_myctophidae_diaphus-fragilis.jpg
+2_myctophidae_diaphus-agassizii.jpg
+```
+
+
+
 
 

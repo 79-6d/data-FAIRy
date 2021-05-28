@@ -1,5 +1,7 @@
 # Data-FAIRy
 
+**Please note that this is still under active development.**
+
 The FAIRy you summon to do your data laundry!
 
 ## Why do we create Data-FAIRy?

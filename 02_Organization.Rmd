@@ -1,8 +1,8 @@
-# General good practice
+# Organization
 
-## Project directory management
+Good file organization and naming is a mighty weapon against chaos. Informative file name and location tells you what it is, why it exists and its relationship with other things. The more self explanatory it can be, the better! README's are great, but don't document something that is self-documenting by definition.
 
-### Summary
+## Project structure
 
 **Good project structure**
 
@@ -28,12 +28,41 @@
 └── reports            <- Generated QC reports.
     └── figures        <- Generated graphics and figures to be used in reporting.
 ```
-_Adapted from Python’s version from Cookiecutter Data Science https://drivendata.github.io/cookiecutter-data-science/ accessed on 2020-10-29_
+Adapted from Python’s version from [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+
+A good project structure encourages practice that make it easier to come back to old work and make the code easily reproducible.
+
+## Organizational tips
+
+A couple of tips from Jenny Bryan's [organization slides](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf) which worth to be mentioned: 
+
+- [A quarantine directory](#a-quarantine-directory)
+- [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
+- [A prose directory](#a-prose-directory)
+- [File organization reflects input vs outputs and the information flow](#file-organization-reflects-input-vs-outputs-and-the-information-flow)
+
+### [A quarantine directory](#a-quarantine-directory)
+
+If your collaborator send you data with space-containing file names, data in spreadsheet etc that do not fits your standard naming system and practice, you can place those files in a quarantine directory.
+
+The renamed or exported plain text files can be move to your data directory. Record what you did in a README or comments in your code to remind yourself about the file's source, if it is from the outside world in a state that is not ready for your programmatic analysis.
+
+### [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
+
+So that it will not be accidentally edited by you or someone else.
+
+### [A prose directory](#a-prose-directory)
+
+Sometimes you need a folder to keep key emails, internal documentation, explanations, random documents received. Similar to the quarantine directory, the prose directory can be used to park these things without having to keep the same standard for file names and open formats.
+
+### [File organization should reflect input vs outputs and the information flow](#file-organization-reflects-input-vs-outputs-and-the-information-flow)
+
+`TODO add a figure`
 
 
-## Give good names to files
+## Naming files
 
-### Summary
+Jenny Bryan also has [good tips in naming files](https://speakerdeck.com/jennybc/how-to-name-files) summarized below.
 
 Good file names are:
 
@@ -58,44 +87,44 @@ nJ7UyiE*.txt
 ça va.txt
 ```
 
-See more: https://speakerdeck.com/jennybc/how-to-name-files
-
 ### [Machine readable](#machine-readable)
 
 Regular expression and globbing friendly
 
-Avoid: 
+**Avoid:**
+
 - special characters
 - spaces
 - punctuation
 - accented characters
 - case sensitivity
 
-Use:
+**Use:**
+
 - delimiters
 
-File names follow the patterns:
+File names follow the pattern:
 
 `<date>_<cruise-number>_<location>.pdf`
 
-- `_` hyphen delimits units of metadata
-- `-` underscore delimits words for readability
+- `_` underscore delimits units of metadata
+- `-` hyphen delimits words for readability
 
 ```
 ~/Desktop/projects/01_cruise-reports ᐅ ls
-2018-12-15_PS117_Cape-Town.pdf
-2019-02-09_PS118_Punta-Arenas.pdf
-2019-04-13_PS119_Punta-Arenas.pdf
-2020-06-04_PS122-4_Arctic-Ocean.pdf
-2020-08-12_PS122-5_Arctic-Ocean.pdf
+2018-12-15_PS117_cape-town.pdf
+2019-02-09_PS118_punta-arenas.pdf
+2019-04-13_PS119_punta-arenas.pdf
+2020-06-04_PS122-4_arctic-ocean.pdf
+2020-08-12_PS122-5_arctic-ocean.pdf
 ```
 
 Using globbing/regular expression to narrow file listing:
 
 ```
-~/Desktop/projects/01_cruise-reports ᐅ ls *Arctic*
-2020-06-04_PS122-4_Arctic-Ocean.pdf
-2020-08-12_PS122-5_Arctic-Ocean.pdf
+~/Desktop/projects/01_cruise-reports ᐅ ls *arctic*
+2020-06-04_PS122-4_arctic-ocean.pdf
+2020-08-12_PS122-5_arctic-ocean.pdf
 ```
 
 ### [Human readable](#human-readable)
@@ -144,7 +173,7 @@ If files are not meaningful when ordered with date, they can be named with numer
 011_myctophidae_diaphus-fragilis.jpg
 ```
 
-If the file names are not left pad with zeros, the order will not be desirable.
+If the file names are not left pad with zeros, the order will not be chronological as depicted in the example below.
 
 ```
 10_myctophidae_diaphus-danae.jpg

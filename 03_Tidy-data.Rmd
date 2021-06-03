@@ -1,14 +1,24 @@
 # Tidy data
 
-## Summary
+Tidy data is a standard way of mapping the meaning of a dataset to its structure. 
 
 ![](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+Figure from [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#introduction-6)
 
 
-## What is Tidy data?
+In tidy data:
 
-- Each variable must have its own column.
-- Each observation must have its own row.
-- Each value must have its own cell.
+- Columns = variables
+- Rows = observations
+- Cells = data (values)
+
+
+
+
+## References
+
+- https://r4ds.had.co.nz/tidy-data.html
+- https://jhudatascience.org/tidyversecourse/intro.html#tidy-data
+- https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf
 
 

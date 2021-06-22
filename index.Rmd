@@ -7,6 +7,14 @@ documentclass: book
 description: "Biological data publishing guidelines"
 ---
 
+```{r setup, echo = FALSE, cache = FALSE}
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE)
+options(knitr.table.format = "html")
+showtbl <- function(z) kable_styling(knitr::kable(z), bootstrap_options = c("striped", "hover", "condensed"))
+```
+
 # About {-}
 
 This document serves to guide researchers who wish to manage the biological data from their scientific expedition
@@ -25,20 +33,28 @@ If dependencies are not automatically installed by `renv` when you open `data-fa
 renv::restore()
 ```
 
-then run the following lines to build the book:
-
-```{r echo=FALSE}
-library(here)  # placed in separate chunk so that renv picks up the pkg
-```
+If necessary, update the packages in renv to the latest version by running 
 
 ```{r eval=FALSE}
-setwd(here())  # set working directory to project root directory 
-bookdown::render_book("index.Rmd")
+renv::update()
+```
+
+To snapshot the state of project library to the lockfile, run: 
+
+```{r eval=FALSE}
+renv::snapshot()
+```
+
+then run the following lines to build the book:
+
+```{r eval=FALSE, message=FALSE}
+library(here) 
+bookdown::render_book(here("index.Rmd"))
 ```
 
 And view it with:
 
-```{r}
+```{r eval = FALSE}
 browseURL("docs/index.html")
 ```
 

@@ -1,10 +1,12 @@
 # Tidy data
 
+This section of the document compiled information from several references:
+
+- [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) 
+- [Tidy Data by Hadley Wickham](http://www.jstatsoft.org/v59/i10/paper)
+- 
+
 Tidy data is a standard way of mapping the meaning of a dataset to its structure. 
-
-![](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
-Figure from [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#introduction-6)
-
 
 In tidy data:
 
@@ -13,7 +15,189 @@ In tidy data:
 - Cells = data (values)
 
 
+![Figure: Rules of tidy data. Obtained from R for Data Science (Figure 12.1)](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+## Why tidy data?
 
+As discussed in [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) and [Tidy Data by Hadley Wickham](http://www.jstatsoft.org/v59/i10/paper), tidy data brings 2 main advantages:
+
+1. Consistent data structure = easier to learn tools that work with it due to the uniformity
+2. The layout of tidy data ensures that the values of each variables from the same observation are always paired. This properties is particularly is well suited for vectorized programming languages like R. 
+ 
+
+## Symptoms of messy data
+
+
+Based on http://www.jstatsoft.org/v59/i10/paper
+
+- Column headers are values, not variable names
+- Multiple variables are stored in one column
+- Variables are stored in both rows and columns
+- Multiple types of observational units are stored in the same table
+- A single observational unit is stored in multiple tables
+
+
+## Common spreadsheets mistakes
+
+This section contains content of [Data Organization in Spreadsheets for Ecologists from Data Carpentry](https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html)
+Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets, The American Statistician, 72:1, 2-10, DOI: 10.1080/00031305.2017.1375989 
+
+
+- [Using multiple tables](#using-multiple-tables)
+- [Using multiple tabs](#using-multiple-tabs)
+- [Not filling in zeros](#not-filling-in-zeros)
+- [Using problematic null values](#using-problematic-null-values)
+- [Using formatting to convey information](#using-formatting-to-convey-information)
+- [Using formatting to make the data sheet look pretty](#using-formatting-to-make-the-data-sheet-look-pretty)
+- [Placing comments or units in cells](#placing-comments-or-units-in-cells)
+- [Entering more than one piece of information in a cell](#entering-more-than-one-piece-of-information-in-a-cell)
+- [Using problematic field names](#using-problematic-field-names)
+- [Using special characters in data](#using-special-characters-in-data)
+- [Inclusion of metadata in data table](#inclusion-of-metadata-in-data-table)
+- [Date formatting](#date-formatting)
+
+### [Using multiple tables](#using-multiple-tables)
+
+Creating multiple data tables within one spreadsheet confuses the computer as false associations between things are created for the computer, which interpret each row as an observation. Same field name is also probably being used in multiple places, which will make it harder for you to tidy the data into a usable form. 
+
+![Figure: Example of spreadsheet usign multiple tables](./figures/tidy-data_multi-tables.png)
+
+In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (species 1 from fieldNumber S3 and species 2 from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 
+
+
+### [Using multiple tabs](#using-multiple-tabs)
+
+When extra tabs are created, computer will not be able to see the connections in the data that are there (you have to introduce spreadsheet application-specific functions or scripting to ensure this connection). For instance, separate tab is created for each day you take a measurement.
+
+This isn't good practice for two reasons: 
+
+1) Inconsistencies are more likely to be introduced into your data
+2) Extra step is needed to combine all data from separate tabs into a single data table before analysis. You will have to explicitly tell the computer how to combine tabs - and if the tabs are inconsistently formatted, you might even have to do it manually.
+
+Most of the time adding another column to the original spreadsheet could resolve the problem. In the example mentioned, adding a `date` column could avoid having multiple tabs of measurements for each day.
+
+
+### [Not filling in zeros](#not-filling-in-zeros)
+
+There’s a difference between a zero and a blank cell in a spreadsheet to the computer:
+
+- a zero is an actual data. You measured or counted it. 
+- A blank cell is a null (missing) value, meaning that it wasn't measured.
+
+The spreadsheets or statistical programs will likely misinterpret blank cells that you intend to be zeros. By not entering the value of your observation, you are telling your computer to represent that data as unknown or missing (null). This can cause problems with subsequent calculations or analyses. 
+
+For example, the average of a set of numbers which includes a single null value is always null (because the computer can’t guess the value of the missing observations). Because of this, it’s very important to record zeros as zeros and truly missing data as nulls.
+
+### [Using problematic null values](#using-problematic-null-values)
+
+Missing (null) values should be represented consistently throughout the dataset and should be differentiated from the value 0.
+
+White et al. presented great examples of different types of commonly used null values, the problems imposed by the types of null values, compatibility with programming languages and their recommendations in [Nine simple ways to make it easier to (re)use your data.](https://ojs.library.queensu.ca/index.php/IEE/article/view/4608) in Data Sharing in Ecology and Evolution.
+
+![](./figures/tidy-data_null-values-recommendations.png)
+
+Table: Null values are indicated as being a null value for specific software if they work consistently and correctly with that software. For example, the null value “NULL” works correctly for certain applications in R, but does not work in others, so it is not presented in the table as R compatible.
+
+There are a few reasons why null values get represented differently within a dataset. 
+
+- Confusing null values are automatically recorded from the measuring device. If that’s the case, there’s not much you can do, but it can be addressed in data cleaning before analysis. 
+- Different null values are used to convey different reasons why the data is missing. Following tidy data principles, it is better to create a new column like ‘data_missing’ and use that column to capture the different reasons.
+
+### [Using formatting to convey information](#using-formatting-to-convey-information)
+
+Most of the time, formatting such as highlighting could be encoded into a separate column.
+
+![](./figures/tidy-data_highlight-to-convey-info.png)
+
+Example: highlighting cells, rows or columns that encode certain information, leaving blank rows to indicate separations in data.
+
+![](./figures/tidy-data_highlight-to-column.png)
+
+Solution: create a new field to encode the life stage of each occurrence record.
+
+### [Using formatting to make the data sheet look pretty](#using-formatting-to-make-the-data-sheet-look-pretty)
+
+Example: Cell merging
+
+![](./figures/tidy-data_merge-cells.png)
+
+Merging cells could confuse the computer to see associations in data. Merged cells will make the data unreadable by statistical software.
+
+```{r}
+library(here)
+library(readxl)
+
+read_excel(here("examples/tidy-data_merge-cells.xlsx"))
+```
+
+Note that when reading the spreadsheet, the value of merged cells (C1, C2) is only interpreted by the function once and assigned to the first record (id = 1).
+
+### [Placing comments or units in cells](#placing-comments-or-units-in-cells)
+
+Example: A coordinate of a field site was not recorded from GPS device while in the field. The coordinate is later on included the data with a comment to indicate that the coordinate is obtained from a map.
+
+![](./figures/tidy-data_comment-cells.png)
+
+Solution: Excel comments are not readable by most analysis software. To resolve this, create another field in the table to add notes or flag this cells. 
+
+![](./figures/tidy-data_comment-to-column.png)
+
+
+Similarly, do not include units in the same cell that contains the measurement value. Ideally, all measurements taken should be in the same unit. If for some reason they aren't, create another field to specify the unit.
+
+### [Entering more than one piece of information in a cell](#entering-more-than-one-piece-of-information-in-a-cell)
+
+Example: Recording coordinates in a single column.
+
+```{r}
+read_excel(here("examples/tidy-data_multi-value-per-cell.xlsx"))
+```
+
+Solution: 
+
+While it is tempting to record a coordinate in a column, it is not a good practice for several reasons:
+
+- software such as excel might interpret it as a formula and subtract the 2 negative values in `coordinate` column.
+- inconsistencies such as different delimiters and the order of values maybe introduced while entering the data. 
+- the field will have to be split for tools that work with tidy data.
+
+Including multiple values in a cell limits the ways in which you can analyze your data. It is better to split the field `coordinate` into `decimalLatitude` and `decimalLongitude` as shown in the figure below.
+
+![](./figures/tidy-data_multi-value-to-column.png)
+
+### [Using problematic field names](#using-problematic-field-names)
+
+Problematic field names include field names which has one or more of the followings:
+
+character | reason
+:--|:--
+spaces | maybe misinterpreted as delimiters
+numbers | some programs don’t like field names that are text strings that start with numbers. Some R packages append an `X` at the beginning of field name if it starts with number.
+special characters ($, @, %, #, &, *, (, ), !, /, etc.) | often have special meaning in programming languages
+
+For instance, importing a spreadsheet with field names that begin with number, contain spaces and special character as shown in figure below with `read.xlsx` function from `xlsx` package will lead to a change in field names.
+
+![](./figures/tidy-data_problematic-field-names.png)
+
+
+```{r}
+library(xlsx)
+sheet <- read.xlsx(here("examples/tidy-data_problematic-field-names.xlsx"), sheetIndex = 1)
+sheet
+```
+
+We recommend to use underscores (`_`) as alternative to spaces or consider writing field names in camel case (e.g.: exampleFileName) to improve readability. Abbreviations might make sense temporarily but it maybe hard to recalled after 5 months. Units can be included in field name to avoid confusion. (e.g. minimumDepthInMeters)
+
+Good name | Good alternative | Avoid
+---|---|---
+max_temp_in_celsius | MaxTempInCelsius | Maximum Temp (°C)
+decimal_latitude | decimalLatitude | latitude
+mean_year_growth | meanYearGrowth | Mean growth/year
+sex | sex | M/F
+
+
+### [Using special characters in data](#using-special-characters-in-data)
+### [Inclusion of metadata in data table](#inclusion-of-metadata-in-data-table)
+### [Date formatting](#date-formatting)
 
 ## References
 

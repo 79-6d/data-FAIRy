@@ -1,10 +1,19 @@
 # Organization
 
-Good file organization and naming is a mighty weapon against chaos. Informative file name and location tells you what it is, why it exists and its relationship with other things. The more self explanatory it can be, the better! README's are great, but don't document something that is self-documenting by definition.
+This section include key points from the following resources:
+
+1. Jenny Bryan's [slides about organization](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf)
+2. 
+
+
+Informative file's name and location tells you its content, why it exists and its relationship with other things. README's are great, but if it can be made self-documenting, it does not need to be documented.
+
 
 ## Project structure
 
-**Good project structure**
+A good project structure encourages practice that make it easier to come back to old work and make the code easily reproducible.
+
+An examples of good project structure adapted from Python’s version from [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) is shown below.
 
 ```
 ├── README.md          <- The top-level README.
@@ -28,9 +37,7 @@ Good file organization and naming is a mighty weapon against chaos. Informative 
 └── reports            <- Generated QC reports.
     └── figures        <- Generated graphics and figures to be used in reporting.
 ```
-Adapted from Python’s version from [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
 
-A good project structure encourages practice that make it easier to come back to old work and make the code easily reproducible.
 
 ## Organizational tips
 

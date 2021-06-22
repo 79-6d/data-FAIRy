@@ -16,6 +16,7 @@ In tidy data:
 
 
 ![Figure: Rules of tidy data. Obtained from R for Data Science (Figure 12.1)](https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png)
+
 ## Why tidy data?
 
 As discussed in [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) and [Tidy Data by Hadley Wickham](http://www.jstatsoft.org/v59/i10/paper), tidy data brings 2 main advantages:

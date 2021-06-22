@@ -11,6 +11,7 @@ machine-readable
 human-readable
 orderable
 tidy-data
+why-tidy-data
 symptoms-of-messy-data
 common-spreadsheets-mistakes
 using-multiple-tables

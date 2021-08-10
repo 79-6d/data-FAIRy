@@ -1,11 +1,12 @@
 introduction
 organization
 project-structure
+why-does-it-matter-to-have-a-good-project-structure
+why-is-this-a-good-project-structure
 organizational-tips
 a-quarantine-directory
 revoke-write-permission-to-raw-data-files
 a-prose-directory
-file-organization-should-reflect-input-vs-outputs-and-the-information-flow
 naming-files
 machine-readable
 human-readable

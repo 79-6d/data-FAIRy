@@ -24,7 +24,7 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2021-06-22" />
+<meta name="date" content="2021-08-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -139,12 +139,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>2</b> Organization</a><ul>
-<li class="chapter" data-level="2.1" data-path="organization.html"><a href="organization.html#project-structure"><i class="fa fa-check"></i><b>2.1</b> Project structure</a></li>
+<li class="chapter" data-level="2.1" data-path="organization.html"><a href="organization.html#project-structure"><i class="fa fa-check"></i><b>2.1</b> Project structure</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="organization.html"><a href="organization.html#why-does-it-matter-to-have-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.1</b> Why does it matter to have a good project structure?</a></li>
+<li class="chapter" data-level="2.1.2" data-path="organization.html"><a href="organization.html#why-is-this-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.2</b> Why is this a good project structure?</a></li>
+</ul></li>
 <li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.2</b> Organizational tips</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="organization.html"><a href="organization.html#a-quarantine-directory"><i class="fa fa-check"></i><b>2.2.1</b> <span>A quarantine directory</span></a></li>
 <li class="chapter" data-level="2.2.2" data-path="organization.html"><a href="organization.html#revoke-write-permission-to-raw-data-files"><i class="fa fa-check"></i><b>2.2.2</b> <span>Revoke write permission to raw data files</span></a></li>
 <li class="chapter" data-level="2.2.3" data-path="organization.html"><a href="organization.html#a-prose-directory"><i class="fa fa-check"></i><b>2.2.3</b> <span>A prose directory</span></a></li>
-<li class="chapter" data-level="2.2.4" data-path="organization.html"><a href="organization.html#file-organization-should-reflect-input-vs-outputs-and-the-information-flow"><i class="fa fa-check"></i><b>2.2.4</b> <span>File organization should reflect input vs outputs and the information flow</span></a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.3</b> Naming files</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="organization.html"><a href="organization.html#machine-readable"><i class="fa fa-check"></i><b>2.3.1</b> <span>Machine readable</span></a></li>
@@ -330,10 +332,18 @@ Karl W. Broman &amp; Kara H. Woo (2018) Data Organization in Spreadsheets, The A
 <p>Example: Cell merging</p>
 <p><img src="figures/tidy-data_merge-cells.png" /></p>
 <p>Merging cells could confuse the computer to see associations in data. Merged cells will make the data unreadable by statistical software.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tidy-data.html#cb16-1"></a><span class="kw">library</span>(here)</span>
-<span id="cb16-2"><a href="tidy-data.html#cb16-2"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb16-3"><a href="tidy-data.html#cb16-3"></a></span>
-<span id="cb16-4"><a href="tidy-data.html#cb16-4"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_merge-cells.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tidy-data.html#cb1-1"></a><span class="kw">library</span>(here)</span></code></pre></div>
+<pre><code>## here() starts at /Users/biodiversityaq/Desktop/data-fairy</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tidy-data.html#cb3-1"></a><span class="kw">library</span>(readxl)</span>
+<span id="cb3-2"><a href="tidy-data.html#cb3-2"></a></span>
+<span id="cb3-3"><a href="tidy-data.html#cb3-3"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_merge-cells.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 4 x 4
+##      id species image     fieldNotes                                      
+##   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;                                           
+## 1     1 PA      img_PA_AP occurrence of 1,2 are captured in the same image
+## 2     2 AP      &lt;NA&gt;      occurrence of 1,2 are captured in the same image
+## 3     3 AP      img_AP_3  &lt;NA&gt;                                            
+## 4     4 AF      img_AF_4  &lt;NA&gt;</code></pre>
 <p>Note that when reading the spreadsheet, the value of merged cells (C1, C2) is only interpreted by the function once and assigned to the first record (id = 1).</p>
 </div>
 <div id="placing-comments-or-units-in-cells" class="section level3">
@@ -347,7 +357,13 @@ Karl W. Broman &amp; Kara H. Woo (2018) Data Organization in Spreadsheets, The A
 <div id="entering-more-than-one-piece-of-information-in-a-cell" class="section level3">
 <h3><span class="header-section-number">3.3.8</span> <a href="tidy-data.html#entering-more-than-one-piece-of-information-in-a-cell">Entering more than one piece of information in a cell</a></h3>
 <p>Example: Recording coordinates in a single column.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tidy-data.html#cb17-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_multi-value-per-cell.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tidy-data.html#cb5-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-value-per-cell.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 3 x 3
+##   locality          coordinate        scientificName 
+##   &lt;chr&gt;             &lt;chr&gt;             &lt;chr&gt;          
+## 1 Admiralty bay     -62.1996 -58.3763 charcotia obesa
+## 2 Admiralty bay     -62.2032 -58.3908 charcotia obesa
+## 3 Bransfield Strait -63.5236 -60.429  amphipoda</code></pre>
 <p>Solution:</p>
 <p>While it is tempting to record a coordinate in a column, it is not a good practice for several reasons:</p>
 <ul>
@@ -389,9 +405,13 @@ Karl W. Broman &amp; Kara H. Woo (2018) Data Organization in Spreadsheets, The A
 </table>
 <p>For instance, importing a spreadsheet with field names that begin with number, contain spaces and special character as shown in figure below with <code>read.xlsx</code> function from <code>xlsx</code> package will lead to a change in field names.</p>
 <p><img src="figures/tidy-data_problematic-field-names.png" /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tidy-data.html#cb18-1"></a><span class="kw">library</span>(xlsx)</span>
-<span id="cb18-2"><a href="tidy-data.html#cb18-2"></a>sheet &lt;-<span class="st"> </span><span class="kw">read.xlsx</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_problematic-field-names.xlsx&quot;</span>), <span class="dt">sheetIndex =</span> <span class="dv">1</span>)</span>
-<span id="cb18-3"><a href="tidy-data.html#cb18-3"></a>sheet</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tidy-data.html#cb7-1"></a><span class="kw">library</span>(xlsx)</span>
+<span id="cb7-2"><a href="tidy-data.html#cb7-2"></a>sheet &lt;-<span class="st"> </span><span class="kw">read.xlsx</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx&quot;</span>), <span class="dt">sheetIndex =</span> <span class="dv">1</span>)</span>
+<span id="cb7-3"><a href="tidy-data.html#cb7-3"></a>sheet</span></code></pre></div>
+<pre><code>##   X1_id X2.scientific.name X...individual.
+## 1     1    charcotia obesa               2
+## 2     2    charcotia obesa               3
+## 3     3          amphipoda               0</code></pre>
 <p>We recommend to use underscores (<code>_</code>) as alternative to spaces or consider writing field names in camel case (e.g.: exampleFileName) to improve readability. Abbreviations might make sense temporarily but it maybe hard to recalled after 5 months. Units can be included in field name to avoid confusion. (e.g. minimumDepthInMeters)</p>
 <table>
 <thead>

@@ -2,18 +2,17 @@
 
 This section include key points from the following resources:
 
-1. Jenny Bryan's [slides about organization](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf)
-2. 
-
-
-Informative file's name and location tells you its content, why it exists and its relationship with other things. README's are great, but if it can be made self-documenting, it does not need to be documented.
-
+1. [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+2. Jenny Bryan's [slides about organization](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf)
+3. Jenny Bryan's [slides about naming things](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf)
 
 ## Project structure
 
-A good project structure encourages practice that make it easier to come back to old work and make the code easily reproducible.
+### Why does it matter to have a good project structure?
 
-An examples of good project structure adapted from Python’s version from [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) is shown below.
+A clear self-documenting project structure helps newcomer to understand an analyses without having to read extensive documentation or all of the code to look for specific things. README's are great, but if it can be made self-documenting, it does not need to be documented. 
+
+An example of good project structure adapted from Python’s version from [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/) is shown below.
 
 ```
 ├── README.md          <- The top-level README.
@@ -38,15 +37,20 @@ An examples of good project structure adapted from Python’s version from [Cook
     └── figures        <- Generated graphics and figures to be used in reporting.
 ```
 
+### Why is this a good project structure?
+
+This is a good project structure because:
+
+- Self explanatory: The file name and location are very informative about what it is, why it exists, how it relates to other files/directories.
+- It reflects the inputs, outputs and the flow of information.
 
 ## Organizational tips
 
-A couple of tips from Jenny Bryan's [organization slides](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf) which worth to be mentioned: 
+A couple of tips from Jenny Bryan's [organization slides](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf) that are worth to be mentioned: 
 
 - [A quarantine directory](#a-quarantine-directory)
 - [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
 - [A prose directory](#a-prose-directory)
-- [File organization reflects input vs outputs and the information flow](#file-organization-reflects-input-vs-outputs-and-the-information-flow)
 
 ### [A quarantine directory](#a-quarantine-directory)
 
@@ -60,11 +64,7 @@ So that it will not be accidentally edited by you or someone else.
 
 ### [A prose directory](#a-prose-directory)
 
-Sometimes you need a folder to keep key emails, internal documentation, explanations, random documents received. Similar to the quarantine directory, the prose directory can be used to park these things without having to keep the same standard for file names and open formats.
-
-### [File organization should reflect input vs outputs and the information flow](#file-organization-reflects-input-vs-outputs-and-the-information-flow)
-
-`TODO add a figure`
+Sometimes you need a folder to keep key emails, internal documentation, explanations or random documents received. Similar to the quarantine directory, the prose directory can be used to park these things without having to keep the same standard for file names and open formats.
 
 
 ## Naming files
@@ -85,7 +85,7 @@ Good file names are:
 southern-ocean-jellyfish.docx
 ```
 
-**Bad names**
+**File names to avoid**
 
 ```
 1.txt 
@@ -96,7 +96,11 @@ nJ7UyiE*.txt
 
 ### [Machine readable](#machine-readable)
 
-Regular expression and globbing friendly
+Machine readable file names will enable you to easily search for a file or a group of files (globbing) easily using regular expression.
+
+> A regular expression is a sequence of characters that specifies a search pattern. (Wikipedia)
+
+To be regular expression and globbing friendly, file names should avoid having:
 
 **Avoid:**
 
@@ -110,41 +114,61 @@ Regular expression and globbing friendly
 
 - delimiters
 
-File names follow the pattern:
+Examples: 
 
-`<date>_<cruise-number>_<location>.pdf`
+```{r}
+library(here)
+list.files(path = here("examples/organization_example-file-names/"))
+```
+
+> `ls` is a command to list all files within the current (`~/Desktop/projects/01_cruise-reports/`) directory
+
+Using globbing/regular expression to narrow file listing that which contains the word "van-veen":
+
+```{r}
+list.files(path = here("examples/organization_example-file-names/"), pattern = "van-veen")
+```
+
+Delimiting the file names also helps to delimit the units of metadata in the file names. For example, the file names above follow the pattern:
+
+`<date>_<sampling-station>_<sampling-protocol>.<file-extension>`
 
 - `_` underscore delimits units of metadata
 - `-` hyphen delimits words for readability
 
-```
-~/Desktop/projects/01_cruise-reports ᐅ ls
-2018-12-15_PS117_cape-town.pdf
-2019-02-09_PS118_punta-arenas.pdf
-2019-04-13_PS119_punta-arenas.pdf
-2020-06-04_PS122-4_arctic-ocean.pdf
-2020-08-12_PS122-5_arctic-ocean.pdf
+```{r}
+file_list <- list.files(path = here("examples/organization_example-file-names/"))
+tbl <- stringr::str_split_fixed(file_list, "[_\\.]", 4)
+colnames(tbl) <- c("date", "sampling-station", "sampling-protocol", "file-type")
+tbl
 ```
 
-Using globbing/regular expression to narrow file listing:
 
-```
-~/Desktop/projects/01_cruise-reports ᐅ ls *arctic*
-2020-06-04_PS122-4_arctic-ocean.pdf
-2020-08-12_PS122-5_arctic-ocean.pdf
-```
 
 ### [Human readable](#human-readable)
 
-- Names that tells you about the file content.
-- Utilize the slug concept from semantic URLs.
+File name that tells you about the file content saves you time. Similarly, using delimiters as mentioned above helps to make the file name more readable.
+
+These file names contain the same information but delimited differently:
+
+Without delimiters, the name is hard to read.
 
 ```
-2019-01-24_gis_vector.pdf
-2019-02-12_gis_maps.pdf
-2019-03-16_r_ggplot.pdf
-2019-04-23_r_dplyr.pdf
+20201211admiraltyBayVanVeen.txt
 ```
+
+Underscores `_` to delimit units of metadata. That's better!
+
+```
+20201211_admiraltybay_vanveen.txt
+```
+
+Underscores `_` to delimit units of metadata and hyphen `-` to separate words for readability. Even better! 
+
+```
+2020-12-11_admiralty-bay_van-veen.txt
+```
+
 
 ### [Orderable](#orderable)
 
@@ -155,22 +179,22 @@ Using globbing/regular expression to narrow file listing:
 Meaningful names start with numbers allow files to be sorted chronologically. Note that date is in ISO 8601 standard format (YYYY-MM-DD).
 
 ```
-2020-01-14_team-meeting-minutes.txt
-2020-02-21_team-meeting-minutes.txt
-2020-02-22_managers-meeting-minutes.txt
-2020-03-16_team-meeting-minutes.txt
+2020-01-14_notes.txt
+2020-02-21_notes.txt
+2020-02-22_notes.txt
+2020-03-16_notes.txt
 ```
 
-If date is in other format such as (DD-MM-YYYY), sorting the files does not provide chronological order of events.
+If date is in format such as (DD-MM-YYYY), sorting the files does not provide chronological order of events.
 
 ```
-14-01-2020_team-meeting-minutes.txt
-16-03-2020_team-meeting-minutes.txt
-21-02-2020_team-meeting-minutes.txt
-22-02-2020_managers-meeting-minutes.txt
+14-01-2020_notes.txt
+16-03-2020_notes.txt  # notes from March comes before February's
+21-02-2020_notes.txt
+22-02-2020_notes.txt
 ```
 
-If files are not meaningful when ordered with date, they can be named with numeric characters first. For instance, a folder of images to be added into another document following a certain sequence.
+If files are not meaningful when ordered with date, they can be named with numeric characters first to be able to order them sequentially. For instance, a folder of images to be added into another document following a certain sequence. 
 
 ```
 001_myctophidae_diaphus-adenomus.jpg
@@ -188,8 +212,5 @@ If the file names are not left pad with zeros, the order will not be chronologic
 11_myctophidae_diaphus-fragilis.jpg
 2_myctophidae_diaphus-agassizii.jpg
 ```
-
-
-
 
 

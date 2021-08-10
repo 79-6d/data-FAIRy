@@ -127,7 +127,7 @@ Merging cells could confuse the computer to see associations in data. Merged cel
 library(here)
 library(readxl)
 
-read_excel(here("examples/tidy-data_merge-cells.xlsx"))
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_merge-cells.xlsx"))
 ```
 
 Note that when reading the spreadsheet, the value of merged cells (C1, C2) is only interpreted by the function once and assigned to the first record (id = 1).
@@ -150,7 +150,7 @@ Similarly, do not include units in the same cell that contains the measurement v
 Example: Recording coordinates in a single column.
 
 ```{r}
-read_excel(here("examples/tidy-data_multi-value-per-cell.xlsx"))
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-value-per-cell.xlsx"))
 ```
 
 Solution: 
@@ -182,7 +182,7 @@ For instance, importing a spreadsheet with field names that begin with number, c
 
 ```{r}
 library(xlsx)
-sheet <- read.xlsx(here("examples/tidy-data_problematic-field-names.xlsx"), sheetIndex = 1)
+sheet <- read.xlsx(here("examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx"), sheetIndex = 1)
 sheet
 ```
 

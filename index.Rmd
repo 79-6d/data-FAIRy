@@ -48,7 +48,7 @@ renv::snapshot()
 then run the following lines to build the book:
 
 ```{r eval=FALSE, message=FALSE}
-library(here) 
+library(here)
 bookdown::render_book(here("index.Rmd"))
 ```
 

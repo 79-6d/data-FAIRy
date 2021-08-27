@@ -4,7 +4,10 @@ This section of the document compiled information from several references:
 
 - [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) 
 - [Tidy Data by Hadley Wickham](http://www.jstatsoft.org/v59/i10/paper)
-- 
+- [Data Organization in Spreadsheets for Ecologists](https://datacarpentry.org/spreadsheet-ecology-lesson/)
+- [Data Organization in Spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
+- [Nine simple ways to make it easier to (re)use your data.](https://ojs.library.queensu.ca/index.php/IEE/article/view/4608)
+
 
 Tidy data is a standard way of mapping the meaning of a dataset to its structure. 
 
@@ -21,26 +24,16 @@ In tidy data:
 
 As discussed in [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-data-1) and [Tidy Data by Hadley Wickham](http://www.jstatsoft.org/v59/i10/paper), tidy data brings 2 main advantages:
 
-1. Consistent data structure = easier to learn tools that work with it due to the uniformity
-2. The layout of tidy data ensures that the values of each variables from the same observation are always paired. This properties is particularly is well suited for vectorized programming languages like R. 
+1. Consistent data structure means that it will be easier to learn tools that work with it due to the uniformity.
+2. The layout of tidy data ensures that the values of each variables from the same observation are always paired. This properties is particularly well suited for vectorized programming languages such as R. 
  
-
-## Symptoms of messy data
-
-
-Based on http://www.jstatsoft.org/v59/i10/paper
-
-- Column headers are values, not variable names
-- Multiple variables are stored in one column
-- Variables are stored in both rows and columns
-- Multiple types of observational units are stored in the same table
-- A single observational unit is stored in multiple tables
-
 
 ## Common spreadsheets mistakes
 
-This section contains content adapted from [Data Organization in Spreadsheets for Ecologists from Data Carpentry](https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html)
-Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets, The American Statistician, 72:1, 2-10, DOI: 10.1080/00031305.2017.1375989 
+This section contains content adapted from:
+
+- [Data Organization in Spreadsheets for Ecologists from Data Carpentry](https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html)
+- [Data Organization in Spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 
 
 - [Using multiple tables](#using-multiple-tables)
@@ -56,14 +49,23 @@ Karl W. Broman & Kara H. Woo (2018) Data Organization in Spreadsheets, The Ameri
 - [Inclusion of metadata in data table](#inclusion-of-metadata-in-data-table)
 - [Date formatting](#date-formatting)
 
+
 ### [Using multiple tables](#using-multiple-tables)
 
 Creating multiple data tables within one spreadsheet confuses the computer as false associations between things are created for the computer, which interpret each row as an observation. Same field name is also probably being used in multiple places, which will make it harder for you to tidy the data into a usable form. 
 
 ![Figure: Example of spreadsheet usign multiple tables](./figures/tidy-data_multi-tables.png)
 
-In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (species 1 from fieldNumber S3 and species 2 from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 
+```{r message=FALSE}
+library(readxl)
+library(here)
+library(tidyverse)
 
+# extract row where fieldNumber == S3
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3") 
+```
+
+In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 
 
 ### [Using multiple tabs](#using-multiple-tabs)
 
@@ -124,13 +126,14 @@ Example: Cell merging
 Merging cells could confuse the computer to see associations in data. Merged cells will make the data unreadable by statistical software.
 
 ```{r}
-library(here)
-library(readxl)
-
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_merge-cells.xlsx"))
 ```
 
-Note that when reading the spreadsheet, the value of merged cells (C1, C2) is only interpreted by the function once and assigned to the first record (id = 1).
+Note that when reading the spreadsheet, the value of merged cells is only interpreted by the function once and assigned to the first record. Hence it is advisable to have the data in each row.
+
+```{r}
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_merge-cells_correct.xlsx"))
+```
 
 ### [Placing comments or units in cells](#placing-comments-or-units-in-cells)
 
@@ -138,10 +141,16 @@ Example: A coordinate of a field site was not recorded from GPS device while in 
 
 ![](./figures/tidy-data_comment-cells.png)
 
+```{r}
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_comment-cells.xlsx"))
+```
+Note that the comment is not visible in the data when read by R.
+
 Solution: Excel comments are not readable by most analysis software. To resolve this, create another field in the table to add notes or flag this cells. 
 
-![](./figures/tidy-data_comment-to-column.png)
-
+```{r}
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_comment-to-column.xlsx"))
+```
 
 Similarly, do not include units in the same cell that contains the measurement value. Ideally, all measurements taken should be in the same unit. If for some reason they aren't, create another field to specify the unit.
 
@@ -178,32 +187,69 @@ special characters ($, @, %, #, &, *, (, ), !, /, etc.) | often have special mea
 For instance, importing a spreadsheet with field names that begin with number, contain spaces and special character as shown in figure below with `read.xlsx` function from `xlsx` package will lead to a change in field names.
 
 ![](./figures/tidy-data_problematic-field-names.png)
-
-
 ```{r}
 library(xlsx)
-sheet <- read.xlsx(here("examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx"), sheetIndex = 1)
-sheet
+read.xlsx(here("examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx"), sheetIndex = 1)
 ```
-
-We recommend to use underscores (`_`) as alternative to spaces or consider writing field names in camel case (e.g.: exampleFileName) to improve readability. Abbreviations might make sense temporarily but it maybe hard to recalled after 5 months. Units can be included in field name to avoid confusion. (e.g. minimumDepthInMeters)
+We recommend to use underscores (`_`) as alternative to spaces or consider writing field names in camel case (e.g.: exampleFileName) to improve readability. Abbreviations might make sense temporarily but it maybe hard to recalled after a prolonged period of time. Units can be included in field name to avoid confusion. (e.g. minimumDepthInMeters)
 
 Good name | Good alternative | Avoid
 ---|---|---
-max_temp_in_celsius | MaxTempInCelsius | Maximum Temp (°C)
-decimal_latitude | decimalLatitude | latitude
+max_temp_in_celsius | maxTempInCelsius | Maximum Temp (°C)
+decimal_latitude | decimalLatitude | lat
 mean_year_growth | meanYearGrowth | Mean growth/year
 sex | sex | M/F
 
 
 ### [Using special characters in data](#using-special-characters-in-data)
+
+Using spreadsheet as a word processor when entering data by including line breaks, em-dashes, non-standard characters such as (left- or right-aligned quotation marks) not only makes the data less readable, 
+
+![](./figures/tidy-data_special-char.png)
+
+The data looks fine in the excel file above. However when reading the file into excel, following happens. The carriage of the label becomes `\r\n_x000D_` when read by R.
+
+```{r}
+special_char <- read_excel(here("examples/tidy-data_spreadsheets/tidy-data_special-char.xlsx"))
+special_char
+```
+When the data frame is being written into a tab separated value file and read back into R, `\r\n` is treated as new line when writing the file. 
+
+```{r message=FALSE}
+library(tidyverse)
+file_path <- here("examples/tidy-data_written/tidy-data_special-char.txt")
+write_tsv(special_char, file_path)
+read_tsv(file_path)
+```
+
+
 ### [Inclusion of metadata in data table](#inclusion-of-metadata-in-data-table)
+
+Clear field names of a data table is a good practice, however the amount of information that it can hold is limited and over time, the information will be loss if it is not well documented. The chances that you will remember what the field names means after a prolonged period of time is slim. On the other hand, a good documentation helps the others to understand your data, verify your findings and to review your works.
+
+However, the data about your data (metadata) should not be contained in the data file itself because this information is not data. Including it within the same file could disrupt how computer programs interpret your data file. It is better to store this metadata in a separate file in the same directory as your data file, preferably with a name that clearly associates it with your data file.
+
+Additionally, file or database level metadata should contains information below:
+
+- relationship between files that make up the dataset
+- format of the files
+- whether they supercede or are superceded by previous files
+
 ### [Date formatting](#date-formatting)
 
-## References
+If you are using spreadsheet program such as microsoft excel to manage date data, it is important to understand how Excel treats this piece of information. Data Carpentry has a [chapter](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/index.html) that explains this very well.
 
-- https://r4ds.had.co.nz/tidy-data.html
-- https://jhudatascience.org/tidyversecourse/intro.html#tidy-data
-- https://github.com/swcarpentry/good-enough-practices-in-scientific-computing/blob/gh-pages/good-enough-practices-for-scientific-computing.pdf
+To summarize, dates are stored as number of days (integers) from a [default of December 31, 1899 or December 31, 1903](https://docs.microsoft.com/en-US/office/troubleshoot/excel/1900-and-1904-date-system) in Excel. It has its pros and cons but because different version of Excel could have different default values and formats, we recommend the following when storing dates in excel.
+
+Split the date into year, month, day or storing dates as a single string in the form of `YYYYMMDD`.
+
+year | month | day
+:--|:--|:--
+2021 | 08 | 26
+
+
+startDate | endDate 
+:--|:--
+20210801 | 20210826 
 
 

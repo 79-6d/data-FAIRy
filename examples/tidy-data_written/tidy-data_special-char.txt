@@ -1,0 +1,3 @@
+organismID	measurementType	measurementValue	measurementUnit	label
+26	The δ13C measured in the skin of the considered specimen	-15.24	per mille	organismID: 26
+_x000D_The δ13C measured in the skin of the considered specimen: -15.24 per mille

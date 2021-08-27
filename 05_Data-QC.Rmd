@@ -1,16 +1,29 @@
-# Data quality control
+# Data Quality
 
-Summary workflow with diagram
+There are numerous ways to check your data. Throughout our experience, we gather some tools that we used when we check the quality of biodiversity data that we received. Please note that the tools will change over time.
 
-## Quality control procedures and tools
+## Programs we love
 
-### Identifiers
+- [Open Refine](https://openrefine.org/) 
 
-### Geographical data
+OpenRefine does not change your original data. All actions are logged in OpenRefine and can be easily reversed. Since the actions are logged and data is not modified, the actions can be easily reproduced. 
 
-### Temporal data
+OpenRefine has many more features. Data Carpentry has an [excellent lesson](https://datacarpentry.org/OpenRefine-ecology-lesson/) on using OpenRefine to clean data for ecologists.
 
-### Species data
 
-### Measurement data
 
+
+## Taxa
+
+- [WoRMS Taxon match](http://marinespecies.org/aphia.php?p=match)
+
+We work predominantly with marine data from Southern Ocean. WoRMS species information backbone is integrated into GBIF backbone taxonomy and is the taxonomic backbone used by OBIS. Matching the scientific name to WoRMS before publishing the biodiversity data improves its interoperability. 
+
+
+## Geospatial
+
+- [QGIS](https://www.qgis.org/en/site/index.html)
+
+QGIS is a free and open source geographic information system with simple graphical user interface. Plotting records 
+
+- [Quantarctica](https://www.npolar.no/quantarctica/)

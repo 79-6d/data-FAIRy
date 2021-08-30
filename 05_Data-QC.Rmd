@@ -24,6 +24,6 @@ We work predominantly with marine data from Southern Ocean. WoRMS species inform
 
 - [QGIS](https://www.qgis.org/en/site/index.html)
 
-QGIS is a free and open source geographic information system with simple graphical user interface. Plotting records 
+QGIS is a free and open source geographic information system with simple graphical user interface. Visualising records 
 
 - [Quantarctica](https://www.npolar.no/quantarctica/)

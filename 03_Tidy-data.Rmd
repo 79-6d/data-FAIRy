@@ -57,7 +57,7 @@ Creating multiple data tables within one spreadsheet confuses the computer as fa
 
 ![Figure: Example of spreadsheet usign multiple tables](./figures/tidy-data_multi-tables.png)
 
-```{r message=FALSE}
+```{r message=FALSE, results = "asis"}
 library(readxl)
 library(here)
 library(tidyverse)
@@ -65,7 +65,7 @@ library(tidyverse)
 # extract row where fieldNumber == S3
 df <- read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3")
 
-head(df)
+print(knitr::kable(head(df)))
 ```
 
 In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 

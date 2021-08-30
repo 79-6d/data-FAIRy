@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Organization | Data FAIRy</title>
   <meta name="description" content="Biological data publishing guidelines" />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Organization | Data FAIRy" />
   <meta property="og:type" content="book" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="tidy-data.html"/>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -304,15 +304,18 @@ nJ7UyiE*.txt
 <p>Examples:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="organization.html#cb9-1"></a><span class="kw">library</span>(here)</span>
 <span id="cb9-2"><a href="organization.html#cb9-2"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;2020-12-11_admiralty-bay_amphipod-trap.txt&quot; &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;     
-## [3] &quot;2020-12-14_maxwell-bay_amphipod-trap.txt&quot;   &quot;2020-12-14_maxwell-bay_ikmt.txt&quot;           
+<pre><code>## [1] &quot;2020-12-11_admiralty-bay_amphipod-trap.txt&quot;
+## [2] &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;     
+## [3] &quot;2020-12-14_maxwell-bay_amphipod-trap.txt&quot;  
+## [4] &quot;2020-12-14_maxwell-bay_ikmt.txt&quot;           
 ## [5] &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
 <blockquote>
 <p><code>ls</code> is a command to list all files within the current (<code>~/Desktop/projects/01_cruise-reports/</code>) directory</p>
 </blockquote>
 <p>Using globbing/regular expression to narrow file listing that which contains the word “van-veen”:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="organization.html#cb11-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>), <span class="dt">pattern =</span> <span class="st">&quot;van-veen&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;     &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
+<pre><code>## [1] &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;    
+## [2] &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
 <p>Delimiting the file names also helps to delimit the units of metadata in the file names. For example, the file names above follow the pattern:</p>
 <p><code>&lt;date&gt;_&lt;sampling-station&gt;_&lt;sampling-protocol&gt;.&lt;file-extension&gt;</code></p>
 <ul>
@@ -423,6 +426,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "lunr",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true

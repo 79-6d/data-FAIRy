@@ -24,7 +24,7 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2021-08-27" />
+<meta name="date" content="2021-08-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -231,20 +231,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.2</span> Common spreadsheets mistakes</h2>
 <p>This section contains content adapted from:</p>
 <ul>
-<li><p><a href="https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html">Data Organization in Spreadsheets for Ecologists from Data Carpentry</a></p></li>
-<li><p><a href="https://doi.org/10.1080/00031305.2017.1375989">Data Organization in Spreadsheets</a></p></li>
-<li><p><a href="tidy-data.html#using-multiple-tables">Using multiple tables</a></p></li>
-<li><p><a href="tidy-data.html#using-multiple-tabs">Using multiple tabs</a></p></li>
-<li><p><a href="tidy-data.html#not-filling-in-zeros">Not filling in zeros</a></p></li>
-<li><p><a href="tidy-data.html#using-problematic-null-values">Using problematic null values</a></p></li>
-<li><p><a href="tidy-data.html#using-formatting-to-convey-information">Using formatting to convey information</a></p></li>
-<li><p><a href="tidy-data.html#using-formatting-to-make-the-data-sheet-look-pretty">Using formatting to make the data sheet look pretty</a></p></li>
-<li><p><a href="tidy-data.html#placing-comments-or-units-in-cells">Placing comments or units in cells</a></p></li>
-<li><p><a href="tidy-data.html#entering-more-than-one-piece-of-information-in-a-cell">Entering more than one piece of information in a cell</a></p></li>
-<li><p><a href="tidy-data.html#using-problematic-field-names">Using problematic field names</a></p></li>
-<li><p><a href="tidy-data.html#using-special-characters-in-data">Using special characters in data</a></p></li>
-<li><p><a href="tidy-data.html#inclusion-of-metadata-in-data-table">Inclusion of metadata in data table</a></p></li>
-<li><p><a href="tidy-data.html#date-formatting">Date formatting</a></p></li>
+<li><a href="https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html">Data Organization in Spreadsheets for Ecologists from Data Carpentry</a></li>
+<li><a href="https://doi.org/10.1080/00031305.2017.1375989">Data Organization in Spreadsheets</a></li>
+</ul>
+<p>Common spreadsheets mistakes:</p>
+<ul>
+<li><a href="tidy-data.html#using-multiple-tables">Using multiple tables</a></li>
+<li><a href="tidy-data.html#using-multiple-tabs">Using multiple tabs</a></li>
+<li><a href="tidy-data.html#not-filling-in-zeros">Not filling in zeros</a></li>
+<li><a href="tidy-data.html#using-problematic-null-values">Using problematic null values</a></li>
+<li><a href="tidy-data.html#using-formatting-to-convey-information">Using formatting to convey information</a></li>
+<li><a href="tidy-data.html#using-formatting-to-make-the-data-sheet-look-pretty">Using formatting to make the data sheet look pretty</a></li>
+<li><a href="tidy-data.html#placing-comments-or-units-in-cells">Placing comments or units in cells</a></li>
+<li><a href="tidy-data.html#entering-more-than-one-piece-of-information-in-a-cell">Entering more than one piece of information in a cell</a></li>
+<li><a href="tidy-data.html#using-problematic-field-names">Using problematic field names</a></li>
+<li><a href="tidy-data.html#using-special-characters-in-data">Using special characters in data</a></li>
+<li><a href="tidy-data.html#inclusion-of-metadata-in-data-table">Inclusion of metadata in data table</a></li>
+<li><a href="tidy-data.html#date-formatting">Date formatting</a></li>
 </ul>
 <div id="using-multiple-tables" class="section level3">
 <h3><span class="header-section-number">3.2.1</span> <a href="tidy-data.html#using-multiple-tables">Using multiple tables</a></h3>
@@ -258,7 +261,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb22-3"><a href="tidy-data.html#cb22-3"></a><span class="kw">library</span>(tidyverse)</span>
 <span id="cb22-4"><a href="tidy-data.html#cb22-4"></a></span>
 <span id="cb22-5"><a href="tidy-data.html#cb22-5"></a><span class="co"># extract row where fieldNumber == S3</span></span>
-<span id="cb22-6"><a href="tidy-data.html#cb22-6"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(fieldNumber <span class="op">==</span><span class="st"> &quot;S3&quot;</span>) </span></code></pre></div>
+<span id="cb22-6"><a href="tidy-data.html#cb22-6"></a>df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(fieldNumber <span class="op">==</span><span class="st"> &quot;S3&quot;</span>)</span>
+<span id="cb22-7"><a href="tidy-data.html#cb22-7"></a></span>
+<span id="cb22-8"><a href="tidy-data.html#cb22-8"></a><span class="kw">head</span>(df)</span></code></pre></div>
 <p>In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5.</p>
 </div>
 <div id="using-multiple-tabs" class="section level3">

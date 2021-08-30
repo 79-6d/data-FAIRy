@@ -35,6 +35,7 @@ This section contains content adapted from:
 - [Data Organization in Spreadsheets for Ecologists from Data Carpentry](https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html)
 - [Data Organization in Spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
 
+Common spreadsheets mistakes:
 
 - [Using multiple tables](#using-multiple-tables)
 - [Using multiple tabs](#using-multiple-tabs)
@@ -62,7 +63,9 @@ library(here)
 library(tidyverse)
 
 # extract row where fieldNumber == S3
-read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3") 
+df <- read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3")
+
+head(df)
 ```
 
 In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 

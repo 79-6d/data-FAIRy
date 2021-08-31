@@ -24,7 +24,7 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2021-08-30" />
+<meta name="date" content="2021-08-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="introduction.html"/>
 <link rel="next" href="tidy-data.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,29 +134,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-build-this-book-locally"><i class="fa fa-check"></i>How to build this book locally</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>2</b> Organization</a><ul>
-<li class="chapter" data-level="2.1" data-path="organization.html"><a href="organization.html#project-structure"><i class="fa fa-check"></i><b>2.1</b> Project structure</a><ul>
+<li class="chapter" data-level="2" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>2</b> Organization</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="organization.html"><a href="organization.html#project-structure"><i class="fa fa-check"></i><b>2.1</b> Project structure</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="organization.html"><a href="organization.html#why-does-it-matter-to-have-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.1</b> Why does it matter to have a good project structure?</a></li>
 <li class="chapter" data-level="2.1.2" data-path="organization.html"><a href="organization.html#why-is-this-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.2</b> Why is this a good project structure?</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.2</b> Organizational tips</a><ul>
+<li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.2</b> Organizational tips</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="organization.html"><a href="organization.html#a-quarantine-directory"><i class="fa fa-check"></i><b>2.2.1</b> <span>A quarantine directory</span></a></li>
 <li class="chapter" data-level="2.2.2" data-path="organization.html"><a href="organization.html#revoke-write-permission-to-raw-data-files"><i class="fa fa-check"></i><b>2.2.2</b> <span>Revoke write permission to raw data files</span></a></li>
 <li class="chapter" data-level="2.2.3" data-path="organization.html"><a href="organization.html#a-prose-directory"><i class="fa fa-check"></i><b>2.2.3</b> <span>A prose directory</span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.3</b> Naming files</a><ul>
+<li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.3</b> Naming files</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="organization.html"><a href="organization.html#machine-readable"><i class="fa fa-check"></i><b>2.3.1</b> <span>Machine readable</span></a></li>
 <li class="chapter" data-level="2.3.2" data-path="organization.html"><a href="organization.html#human-readable"><i class="fa fa-check"></i><b>2.3.2</b> <span>Human readable</span></a></li>
 <li class="chapter" data-level="2.3.3" data-path="organization.html"><a href="organization.html#orderable"><i class="fa fa-check"></i><b>2.3.3</b> <span>Orderable</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy data</a><ul>
+<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy data</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="tidy-data.html"><a href="tidy-data.html#why-tidy-data"><i class="fa fa-check"></i><b>3.1</b> Why tidy data?</a></li>
-<li class="chapter" data-level="3.2" data-path="tidy-data.html"><a href="tidy-data.html#common-spreadsheets-mistakes"><i class="fa fa-check"></i><b>3.2</b> Common spreadsheets mistakes</a><ul>
+<li class="chapter" data-level="3.2" data-path="tidy-data.html"><a href="tidy-data.html#common-spreadsheets-mistakes"><i class="fa fa-check"></i><b>3.2</b> Common spreadsheets mistakes</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="tidy-data.html"><a href="tidy-data.html#using-multiple-tables"><i class="fa fa-check"></i><b>3.2.1</b> <span>Using multiple tables</span></a></li>
 <li class="chapter" data-level="3.2.2" data-path="tidy-data.html"><a href="tidy-data.html#using-multiple-tabs"><i class="fa fa-check"></i><b>3.2.2</b> <span>Using multiple tabs</span></a></li>
 <li class="chapter" data-level="3.2.3" data-path="tidy-data.html"><a href="tidy-data.html#not-filling-in-zeros"><i class="fa fa-check"></i><b>3.2.3</b> <span>Not filling in zeros</span></a></li>
@@ -171,15 +178,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.12" data-path="tidy-data.html"><a href="tidy-data.html#date-formatting"><i class="fa fa-check"></i><b>3.2.12</b> <span>Date formatting</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-quality.html"><a href="data-quality.html"><i class="fa fa-check"></i><b>4</b> Data Quality</a><ul>
-<li class="chapter" data-level="4.1" data-path="data-quality.html"><a href="data-quality.html#programs-we-love"><i class="fa fa-check"></i><b>4.1</b> Programs we love</a></li>
-<li class="chapter" data-level="4.2" data-path="data-quality.html"><a href="data-quality.html#taxa"><i class="fa fa-check"></i><b>4.2</b> Taxa</a></li>
-<li class="chapter" data-level="4.3" data-path="data-quality.html"><a href="data-quality.html#geospatial"><i class="fa fa-check"></i><b>4.3</b> Geospatial</a></li>
+<li class="chapter" data-level="4" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>4</b> example</a></li>
+<li class="chapter" data-level="5" data-path="data-quality.html"><a href="data-quality.html"><i class="fa fa-check"></i><b>5</b> Data Quality</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-quality.html"><a href="data-quality.html#applications-we-love"><i class="fa fa-check"></i><b>5.1</b> Applications we love</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-quality.html"><a href="data-quality.html#dataset-overview"><i class="fa fa-check"></i><b>5.1.1</b> Dataset overview</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-quality.html"><a href="data-quality.html#taxa"><i class="fa fa-check"></i><b>5.1.2</b> Taxa</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="useful-online-resources.html"><a href="useful-online-resources.html"><i class="fa fa-check"></i><b>5</b> Useful online resources</a><ul>
-<li class="chapter" data-level="5.1" data-path="useful-online-resources.html"><a href="useful-online-resources.html#courses-and-webinars"><i class="fa fa-check"></i><b>5.1</b> Courses and webinars</a></li>
-<li class="chapter" data-level="5.2" data-path="useful-online-resources.html"><a href="useful-online-resources.html#best-practices"><i class="fa fa-check"></i><b>5.2</b> Best practices</a></li>
-<li class="chapter" data-level="5.3" data-path="useful-online-resources.html"><a href="useful-online-resources.html#others"><i class="fa fa-check"></i><b>5.3</b> Others</a></li>
+<li class="chapter" data-level="5.2" data-path="data-quality.html"><a href="data-quality.html#geospatial"><i class="fa fa-check"></i><b>5.2</b> Geospatial</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="useful-online-resources.html"><a href="useful-online-resources.html"><i class="fa fa-check"></i><b>6</b> Useful online resources</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="useful-online-resources.html"><a href="useful-online-resources.html#courses-and-webinars"><i class="fa fa-check"></i><b>6.1</b> Courses and webinars</a></li>
+<li class="chapter" data-level="6.2" data-path="useful-online-resources.html"><a href="useful-online-resources.html#best-practices"><i class="fa fa-check"></i><b>6.2</b> Best practices</a></li>
+<li class="chapter" data-level="6.3" data-path="useful-online-resources.html"><a href="useful-online-resources.html#others"><i class="fa fa-check"></i><b>6.3</b> Others</a></li>
 </ul></li>
 </ul>
 
@@ -198,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="organization" class="section level1">
+<div id="organization" class="section level1" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Organization</h1>
 <p>This section include key points from the following resources:</p>
 <ol style="list-style-type: decimal">
@@ -206,9 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Jenny Bryan’s <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf">slides about organization</a></li>
 <li>Jenny Bryan’s <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf">slides about naming things</a></li>
 </ol>
-<div id="project-structure" class="section level2">
+<div id="project-structure" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Project structure</h2>
-<div id="why-does-it-matter-to-have-a-good-project-structure" class="section level3">
+<div id="why-does-it-matter-to-have-a-good-project-structure" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Why does it matter to have a good project structure?</h3>
 <p>A clear self-documenting project structure helps newcomer to understand an analyses without having to read extensive documentation or all of the code to look for specific things. README’s are great, but if it can be made self-documenting, it does not need to be documented.</p>
 <p>An example of good project structure adapted from Python’s version from <a href="https://drivendata.github.io/cookiecutter-data-science/">Cookiecutter Data Science</a> is shown below.</p>
@@ -233,7 +246,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 └── reports            &lt;- Generated QC reports.
     └── figures        &lt;- Generated graphics and figures to be used in reporting.</code></pre>
 </div>
-<div id="why-is-this-a-good-project-structure" class="section level3">
+<div id="why-is-this-a-good-project-structure" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Why is this a good project structure?</h3>
 <p>This is a good project structure because:</p>
 <ul>
@@ -242,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 </div>
-<div id="organizational-tips" class="section level2">
+<div id="organizational-tips" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Organizational tips</h2>
 <p>A couple of tips from Jenny Bryan’s <a href="http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf">organization slides</a> that are worth to be mentioned:</p>
 <ul>
@@ -250,21 +263,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="organization.html#revoke-write-permission-to-raw-data-files">Revoke write permission to raw data files</a></li>
 <li><a href="organization.html#a-prose-directory">A prose directory</a></li>
 </ul>
-<div id="a-quarantine-directory" class="section level3">
+<div id="a-quarantine-directory" class="section level3" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> <a href="organization.html#a-quarantine-directory">A quarantine directory</a></h3>
 <p>If your collaborator send you data with space-containing file names, data in spreadsheet etc that do not fits your standard naming system and practice, you can place those files in a quarantine directory.</p>
 <p>The renamed or exported plain text files can be move to your data directory. Record what you did in a README or comments in your code to remind yourself about the file’s source, if it is from the outside world in a state that is not ready for your programmatic analysis.</p>
 </div>
-<div id="revoke-write-permission-to-raw-data-files" class="section level3">
+<div id="revoke-write-permission-to-raw-data-files" class="section level3" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> <a href="organization.html#revoke-write-permission-to-raw-data-files">Revoke write permission to raw data files</a></h3>
 <p>So that it will not be accidentally edited by you or someone else.</p>
 </div>
-<div id="a-prose-directory" class="section level3">
+<div id="a-prose-directory" class="section level3" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> <a href="organization.html#a-prose-directory">A prose directory</a></h3>
 <p>Sometimes you need a folder to keep key emails, internal documentation, explanations or random documents received. Similar to the quarantine directory, the prose directory can be used to park these things without having to keep the same standard for file names and open formats.</p>
 </div>
 </div>
-<div id="naming-files" class="section level2">
+<div id="naming-files" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> Naming files</h2>
 <p>Jenny Bryan also has <a href="https://speakerdeck.com/jennybc/how-to-name-files">good tips in naming files</a> summarized below.</p>
 <p>Good file names are:</p>
@@ -282,7 +295,7 @@ southern-ocean-jellyfish.docx</code></pre>
 thesis final_Final_FINAL.docx 
 nJ7UyiE*.txt 
 ça va.txt</code></pre>
-<div id="machine-readable" class="section level3">
+<div id="machine-readable" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> <a href="organization.html#machine-readable">Machine readable</a></h3>
 <p>Machine readable file names will enable you to easily search for a file or a group of files (globbing) easily using regular expression.</p>
 <blockquote>
@@ -302,30 +315,26 @@ nJ7UyiE*.txt
 <li>delimiters</li>
 </ul>
 <p>Examples:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="organization.html#cb9-1"></a><span class="kw">library</span>(here)</span>
-<span id="cb9-2"><a href="organization.html#cb9-2"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>))</span></code></pre></div>
-<pre><code>## [1] &quot;2020-12-11_admiralty-bay_amphipod-trap.txt&quot;
-## [2] &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;     
-## [3] &quot;2020-12-14_maxwell-bay_amphipod-trap.txt&quot;  
-## [4] &quot;2020-12-14_maxwell-bay_ikmt.txt&quot;           
-## [5] &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="organization.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb9-2"><a href="organization.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="fu">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>))</span></code></pre></div>
+<pre><code>## [1] &quot;2020-12-11_admiralty-bay_amphipod-trap.txt&quot; &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;      &quot;2020-12-14_maxwell-bay_amphipod-trap.txt&quot;  
+## [4] &quot;2020-12-14_maxwell-bay_ikmt.txt&quot;            &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
 <blockquote>
 <p><code>ls</code> is a command to list all files within the current (<code>~/Desktop/projects/01_cruise-reports/</code>) directory</p>
 </blockquote>
 <p>Using globbing/regular expression to narrow file listing that which contains the word “van-veen”:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="organization.html#cb11-1"></a><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>), <span class="dt">pattern =</span> <span class="st">&quot;van-veen&quot;</span>)</span></code></pre></div>
-<pre><code>## [1] &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;    
-## [2] &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="organization.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list.files</span>(<span class="at">path =</span> <span class="fu">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>), <span class="at">pattern =</span> <span class="st">&quot;van-veen&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2020-12-11_admiralty-bay_van-veen.txt&quot;     &quot;2020-12-16_bransfield-strait_van-veen.txt&quot;</code></pre>
 <p>Delimiting the file names also helps to delimit the units of metadata in the file names. For example, the file names above follow the pattern:</p>
 <p><code>&lt;date&gt;_&lt;sampling-station&gt;_&lt;sampling-protocol&gt;.&lt;file-extension&gt;</code></p>
 <ul>
 <li><code>_</code> underscore delimits units of metadata</li>
 <li><code>-</code> hyphen delimits words for readability</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="organization.html#cb13-1"></a>file_list &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">path =</span> <span class="kw">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>))</span>
-<span id="cb13-2"><a href="organization.html#cb13-2"></a>tbl &lt;-<span class="st"> </span>stringr<span class="op">::</span><span class="kw">str_split_fixed</span>(file_list, <span class="st">&quot;[_</span><span class="ch">\\</span><span class="st">.]&quot;</span>, <span class="dv">4</span>)</span>
-<span id="cb13-3"><a href="organization.html#cb13-3"></a><span class="kw">colnames</span>(tbl) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;sampling-station&quot;</span>, <span class="st">&quot;sampling-protocol&quot;</span>, <span class="st">&quot;file-type&quot;</span>)</span>
-<span id="cb13-4"><a href="organization.html#cb13-4"></a>tbl</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="organization.html#cb13-1" aria-hidden="true" tabindex="-1"></a>file_list <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">path =</span> <span class="fu">here</span>(<span class="st">&quot;examples/organization_example-file-names/&quot;</span>))</span>
+<span id="cb13-2"><a href="organization.html#cb13-2" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> stringr<span class="sc">::</span><span class="fu">str_split_fixed</span>(file_list, <span class="st">&quot;[_</span><span class="sc">\\</span><span class="st">.]&quot;</span>, <span class="dv">4</span>)</span>
+<span id="cb13-3"><a href="organization.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tbl) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;date&quot;</span>, <span class="st">&quot;sampling-station&quot;</span>, <span class="st">&quot;sampling-protocol&quot;</span>, <span class="st">&quot;file-type&quot;</span>)</span>
+<span id="cb13-4"><a href="organization.html#cb13-4" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div>
 <pre><code>##      date         sampling-station    sampling-protocol file-type
 ## [1,] &quot;2020-12-11&quot; &quot;admiralty-bay&quot;     &quot;amphipod-trap&quot;   &quot;txt&quot;    
 ## [2,] &quot;2020-12-11&quot; &quot;admiralty-bay&quot;     &quot;van-veen&quot;        &quot;txt&quot;    
@@ -333,7 +342,7 @@ nJ7UyiE*.txt
 ## [4,] &quot;2020-12-14&quot; &quot;maxwell-bay&quot;       &quot;ikmt&quot;            &quot;txt&quot;    
 ## [5,] &quot;2020-12-16&quot; &quot;bransfield-strait&quot; &quot;van-veen&quot;        &quot;txt&quot;</code></pre>
 </div>
-<div id="human-readable" class="section level3">
+<div id="human-readable" class="section level3" number="2.3.2">
 <h3><span class="header-section-number">2.3.2</span> <a href="organization.html#human-readable">Human readable</a></h3>
 <p>File name that tells you about the file content saves you time. Similarly, using delimiters as mentioned above helps to make the file name more readable.</p>
 <p>These file names contain the same information but delimited differently:</p>
@@ -344,7 +353,7 @@ nJ7UyiE*.txt
 <p>Underscores <code>_</code> to delimit units of metadata and hyphen <code>-</code> to separate words for readability. Even better!</p>
 <pre><code>2020-12-11_admiralty-bay_van-veen.txt</code></pre>
 </div>
-<div id="orderable" class="section level3">
+<div id="orderable" class="section level3" number="2.3.3">
 <h3><span class="header-section-number">2.3.3</span> <a href="organization.html#orderable">Orderable</a></h3>
 <ul>
 <li>File names that start with numbers.</li>

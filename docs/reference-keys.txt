@@ -26,8 +26,10 @@ using-problematic-field-names
 using-special-characters-in-data
 inclusion-of-metadata-in-data-table
 date-formatting
+example
 data-quality
-programs-we-love
+applications-we-love
+dataset-overview
 taxa
 geospatial
 useful-online-resources

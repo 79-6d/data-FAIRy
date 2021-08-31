@@ -24,7 +24,7 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2021-08-30" />
+<meta name="date" content="2021-08-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,8 @@
   
   
 <link rel="prev" href="organization.html"/>
-<link rel="next" href="data-quality.html"/>
+<link rel="next" href="example.html"/>
+<script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,24 +51,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -87,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -134,29 +134,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#how-to-build-this-book-locally"><i class="fa fa-check"></i>How to build this book locally</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>2</b> Organization</a><ul>
-<li class="chapter" data-level="2.1" data-path="organization.html"><a href="organization.html#project-structure"><i class="fa fa-check"></i><b>2.1</b> Project structure</a><ul>
+<li class="chapter" data-level="2" data-path="organization.html"><a href="organization.html"><i class="fa fa-check"></i><b>2</b> Organization</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="organization.html"><a href="organization.html#project-structure"><i class="fa fa-check"></i><b>2.1</b> Project structure</a>
+<ul>
 <li class="chapter" data-level="2.1.1" data-path="organization.html"><a href="organization.html#why-does-it-matter-to-have-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.1</b> Why does it matter to have a good project structure?</a></li>
 <li class="chapter" data-level="2.1.2" data-path="organization.html"><a href="organization.html#why-is-this-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.2</b> Why is this a good project structure?</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.2</b> Organizational tips</a><ul>
+<li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.2</b> Organizational tips</a>
+<ul>
 <li class="chapter" data-level="2.2.1" data-path="organization.html"><a href="organization.html#a-quarantine-directory"><i class="fa fa-check"></i><b>2.2.1</b> <span>A quarantine directory</span></a></li>
 <li class="chapter" data-level="2.2.2" data-path="organization.html"><a href="organization.html#revoke-write-permission-to-raw-data-files"><i class="fa fa-check"></i><b>2.2.2</b> <span>Revoke write permission to raw data files</span></a></li>
 <li class="chapter" data-level="2.2.3" data-path="organization.html"><a href="organization.html#a-prose-directory"><i class="fa fa-check"></i><b>2.2.3</b> <span>A prose directory</span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.3</b> Naming files</a><ul>
+<li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.3</b> Naming files</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="organization.html"><a href="organization.html#machine-readable"><i class="fa fa-check"></i><b>2.3.1</b> <span>Machine readable</span></a></li>
 <li class="chapter" data-level="2.3.2" data-path="organization.html"><a href="organization.html#human-readable"><i class="fa fa-check"></i><b>2.3.2</b> <span>Human readable</span></a></li>
 <li class="chapter" data-level="2.3.3" data-path="organization.html"><a href="organization.html#orderable"><i class="fa fa-check"></i><b>2.3.3</b> <span>Orderable</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy data</a><ul>
+<li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy data</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="tidy-data.html"><a href="tidy-data.html#why-tidy-data"><i class="fa fa-check"></i><b>3.1</b> Why tidy data?</a></li>
-<li class="chapter" data-level="3.2" data-path="tidy-data.html"><a href="tidy-data.html#common-spreadsheets-mistakes"><i class="fa fa-check"></i><b>3.2</b> Common spreadsheets mistakes</a><ul>
+<li class="chapter" data-level="3.2" data-path="tidy-data.html"><a href="tidy-data.html#common-spreadsheets-mistakes"><i class="fa fa-check"></i><b>3.2</b> Common spreadsheets mistakes</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="tidy-data.html"><a href="tidy-data.html#using-multiple-tables"><i class="fa fa-check"></i><b>3.2.1</b> <span>Using multiple tables</span></a></li>
 <li class="chapter" data-level="3.2.2" data-path="tidy-data.html"><a href="tidy-data.html#using-multiple-tabs"><i class="fa fa-check"></i><b>3.2.2</b> <span>Using multiple tabs</span></a></li>
 <li class="chapter" data-level="3.2.3" data-path="tidy-data.html"><a href="tidy-data.html#not-filling-in-zeros"><i class="fa fa-check"></i><b>3.2.3</b> <span>Not filling in zeros</span></a></li>
@@ -171,15 +178,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.12" data-path="tidy-data.html"><a href="tidy-data.html#date-formatting"><i class="fa fa-check"></i><b>3.2.12</b> <span>Date formatting</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="data-quality.html"><a href="data-quality.html"><i class="fa fa-check"></i><b>4</b> Data Quality</a><ul>
-<li class="chapter" data-level="4.1" data-path="data-quality.html"><a href="data-quality.html#programs-we-love"><i class="fa fa-check"></i><b>4.1</b> Programs we love</a></li>
-<li class="chapter" data-level="4.2" data-path="data-quality.html"><a href="data-quality.html#taxa"><i class="fa fa-check"></i><b>4.2</b> Taxa</a></li>
-<li class="chapter" data-level="4.3" data-path="data-quality.html"><a href="data-quality.html#geospatial"><i class="fa fa-check"></i><b>4.3</b> Geospatial</a></li>
+<li class="chapter" data-level="4" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>4</b> example</a></li>
+<li class="chapter" data-level="5" data-path="data-quality.html"><a href="data-quality.html"><i class="fa fa-check"></i><b>5</b> Data Quality</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="data-quality.html"><a href="data-quality.html#applications-we-love"><i class="fa fa-check"></i><b>5.1</b> Applications we love</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="data-quality.html"><a href="data-quality.html#dataset-overview"><i class="fa fa-check"></i><b>5.1.1</b> Dataset overview</a></li>
+<li class="chapter" data-level="5.1.2" data-path="data-quality.html"><a href="data-quality.html#taxa"><i class="fa fa-check"></i><b>5.1.2</b> Taxa</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="useful-online-resources.html"><a href="useful-online-resources.html"><i class="fa fa-check"></i><b>5</b> Useful online resources</a><ul>
-<li class="chapter" data-level="5.1" data-path="useful-online-resources.html"><a href="useful-online-resources.html#courses-and-webinars"><i class="fa fa-check"></i><b>5.1</b> Courses and webinars</a></li>
-<li class="chapter" data-level="5.2" data-path="useful-online-resources.html"><a href="useful-online-resources.html#best-practices"><i class="fa fa-check"></i><b>5.2</b> Best practices</a></li>
-<li class="chapter" data-level="5.3" data-path="useful-online-resources.html"><a href="useful-online-resources.html#others"><i class="fa fa-check"></i><b>5.3</b> Others</a></li>
+<li class="chapter" data-level="5.2" data-path="data-quality.html"><a href="data-quality.html#geospatial"><i class="fa fa-check"></i><b>5.2</b> Geospatial</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="useful-online-resources.html"><a href="useful-online-resources.html"><i class="fa fa-check"></i><b>6</b> Useful online resources</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="useful-online-resources.html"><a href="useful-online-resources.html#courses-and-webinars"><i class="fa fa-check"></i><b>6.1</b> Courses and webinars</a></li>
+<li class="chapter" data-level="6.2" data-path="useful-online-resources.html"><a href="useful-online-resources.html#best-practices"><i class="fa fa-check"></i><b>6.2</b> Best practices</a></li>
+<li class="chapter" data-level="6.3" data-path="useful-online-resources.html"><a href="useful-online-resources.html#others"><i class="fa fa-check"></i><b>6.3</b> Others</a></li>
 </ul></li>
 </ul>
 
@@ -198,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tidy-data" class="section level1">
+<div id="tidy-data" class="section level1" number="3">
 <h1><span class="header-section-number">Chapter 3</span> Tidy data</h1>
 <p>This section of the document compiled information from several references:</p>
 <ul>
@@ -219,7 +232,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <img src="https://d33wubrfki0l68.cloudfront.net/6f1ddb544fc5c69a2478e444ab8112fb0eea23f8/91adc/images/tidy-1.png" alt="" />
 <p class="caption">Figure: Rules of tidy data. Obtained from R for Data Science (Figure 12.1)</p>
 </div>
-<div id="why-tidy-data" class="section level2">
+<div id="why-tidy-data" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Why tidy data?</h2>
 <p>As discussed in <a href="https://r4ds.had.co.nz/tidy-data.html#tidy-data-1">R for Data Science</a> and <a href="http://www.jstatsoft.org/v59/i10/paper">Tidy Data by Hadley Wickham</a>, tidy data brings 2 main advantages:</p>
 <ol style="list-style-type: decimal">
@@ -227,7 +240,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The layout of tidy data ensures that the values of each variables from the same observation are always paired. This properties is particularly well suited for vectorized programming languages such as R.</li>
 </ol>
 </div>
-<div id="common-spreadsheets-mistakes" class="section level2">
+<div id="common-spreadsheets-mistakes" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Common spreadsheets mistakes</h2>
 <p>This section contains content adapted from:</p>
 <ul>
@@ -249,24 +262,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="tidy-data.html#inclusion-of-metadata-in-data-table">Inclusion of metadata in data table</a></li>
 <li><a href="tidy-data.html#date-formatting">Date formatting</a></li>
 </ul>
-<div id="using-multiple-tables" class="section level3">
+<div id="using-multiple-tables" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> <a href="tidy-data.html#using-multiple-tables">Using multiple tables</a></h3>
 <p>Creating multiple data tables within one spreadsheet confuses the computer as false associations between things are created for the computer, which interpret each row as an observation. Same field name is also probably being used in multiple places, which will make it harder for you to tidy the data into a usable form.</p>
 <div class="figure">
 <img src="figures/tidy-data_multi-tables.png" alt="" />
 <p class="caption">Figure: Example of spreadsheet usign multiple tables</p>
 </div>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tidy-data.html#cb22-1"></a><span class="kw">library</span>(readxl)</span>
-<span id="cb22-2"><a href="tidy-data.html#cb22-2"></a><span class="kw">library</span>(here)</span>
-<span id="cb22-3"><a href="tidy-data.html#cb22-3"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb22-4"><a href="tidy-data.html#cb22-4"></a></span>
-<span id="cb22-5"><a href="tidy-data.html#cb22-5"></a><span class="co"># extract row where fieldNumber == S3</span></span>
-<span id="cb22-6"><a href="tidy-data.html#cb22-6"></a>df &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(fieldNumber <span class="op">==</span><span class="st"> &quot;S3&quot;</span>)</span>
-<span id="cb22-7"><a href="tidy-data.html#cb22-7"></a></span>
-<span id="cb22-8"><a href="tidy-data.html#cb22-8"></a><span class="kw">print</span>(knitr<span class="op">::</span><span class="kw">kable</span>(<span class="kw">head</span>(df)))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tidy-data.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="tidy-data.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb1-3"><a href="tidy-data.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="tidy-data.html#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="tidy-data.html#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># extract row where fieldNumber == S3</span></span>
+<span id="cb1-6"><a href="tidy-data.html#cb1-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx&quot;</span>)) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(fieldNumber <span class="sc">==</span> <span class="st">&quot;S3&quot;</span>)</span>
+<span id="cb1-7"><a href="tidy-data.html#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="tidy-data.html#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(df)))</span></code></pre></div>
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="6%" />
+<col width="11%" />
+<col width="10%" />
+<col width="12%" />
+<col width="12%" />
+<col width="3%" />
+<col width="11%" />
+<col width="3%" />
+<col width="9%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">fieldNumber</th>
+<th align="left">locality</th>
+<th align="left">eventDate</th>
+<th align="left">samplingProtocol</th>
+<th align="left">Charcotia obesa</th>
+<th align="left">…6</th>
+<th align="left">…7</th>
+<th align="left">…8</th>
+<th align="left">…9</th>
+<th align="left">…10</th>
+<th align="left">…11</th>
+<th align="left">…12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">S3</td>
+<td align="left">Maxwell Bay</td>
+<td align="left">43467</td>
+<td align="left">Van Veen Grab</td>
+<td align="left">2</td>
+<td align="left">2.3333333333333335</td>
+<td align="left">2.5166114784235836</td>
+<td align="left">S6</td>
+<td align="left">Bransfield Strait</td>
+<td align="left">43470</td>
+<td align="left">Van Veen Grab</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
 <p>In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5.</p>
 </div>
-<div id="using-multiple-tabs" class="section level3">
+<div id="using-multiple-tabs" class="section level3" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> <a href="tidy-data.html#using-multiple-tabs">Using multiple tabs</a></h3>
 <p>When extra tabs are created, computer will not be able to see the connections in the data that are there (you have to introduce spreadsheet application-specific functions or scripting to ensure this connection). For instance, separate tab is created for each day you take a measurement.</p>
 <p>This isn’t good practice for two reasons:</p>
@@ -276,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>Most of the time adding another column to the original spreadsheet could resolve the problem. In the example mentioned, adding a <code>date</code> column could avoid having multiple tabs of measurements for each day.</p>
 </div>
-<div id="not-filling-in-zeros" class="section level3">
+<div id="not-filling-in-zeros" class="section level3" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> <a href="tidy-data.html#not-filling-in-zeros">Not filling in zeros</a></h3>
 <p>There’s a difference between a zero and a blank cell in a spreadsheet to the computer:</p>
 <ul>
@@ -286,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The spreadsheets or statistical programs will likely misinterpret blank cells that you intend to be zeros. By not entering the value of your observation, you are telling your computer to represent that data as unknown or missing (null). This can cause problems with subsequent calculations or analyses.</p>
 <p>For example, the average of a set of numbers which includes a single null value is always null (because the computer can’t guess the value of the missing observations). Because of this, it’s very important to record zeros as zeros and truly missing data as nulls.</p>
 </div>
-<div id="using-problematic-null-values" class="section level3">
+<div id="using-problematic-null-values" class="section level3" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> <a href="tidy-data.html#using-problematic-null-values">Using problematic null values</a></h3>
 <p>Missing (null) values should be represented consistently throughout the dataset and should be differentiated from the value 0.</p>
 <p>White et al. presented great examples of different types of commonly used null values, the problems imposed by the types of null values, compatibility with programming languages and their recommendations in <a href="https://ojs.library.queensu.ca/index.php/IEE/article/view/4608">Nine simple ways to make it easier to (re)use your data.</a> in Data Sharing in Ecology and Evolution.</p>
@@ -298,7 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Different null values are used to convey different reasons why the data is missing. Following tidy data principles, it is better to create a new column like ‘data_missing’ and use that column to capture the different reasons.</li>
 </ul>
 </div>
-<div id="using-formatting-to-convey-information" class="section level3">
+<div id="using-formatting-to-convey-information" class="section level3" number="3.2.5">
 <h3><span class="header-section-number">3.2.5</span> <a href="tidy-data.html#using-formatting-to-convey-information">Using formatting to convey information</a></h3>
 <p>Most of the time, formatting such as highlighting could be encoded into a separate column.</p>
 <p><img src="figures/tidy-data_highlight-to-convey-info.png" /></p>
@@ -306,29 +367,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="figures/tidy-data_highlight-to-column.png" /></p>
 <p>Solution: create a new field to encode the life stage of each occurrence record.</p>
 </div>
-<div id="using-formatting-to-make-the-data-sheet-look-pretty" class="section level3">
+<div id="using-formatting-to-make-the-data-sheet-look-pretty" class="section level3" number="3.2.6">
 <h3><span class="header-section-number">3.2.6</span> <a href="tidy-data.html#using-formatting-to-make-the-data-sheet-look-pretty">Using formatting to make the data sheet look pretty</a></h3>
 <p>Example: Cell merging</p>
 <p><img src="figures/tidy-data_merge-cells.png" /></p>
 <p>Merging cells could confuse the computer to see associations in data. Merged cells will make the data unreadable by statistical software.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tidy-data.html#cb23-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_merge-cells.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tidy-data.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_merge-cells.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 4
+##      id species                 image     eventRemarks                          
+##   &lt;dbl&gt; &lt;chr&gt;                   &lt;chr&gt;     &lt;chr&gt;                                 
+## 1     1 Charcotia obesa         img_CO_AP 2 species are captured in the same im…
+## 2     2 Amphioplus peregrinator &lt;NA&gt;      &lt;NA&gt;                                  
+## 3     3 Amphioplus peregrinator img_AP_3  &lt;NA&gt;                                  
+## 4     4 Amphioplus peregrinator img_AP_4  &lt;NA&gt;</code></pre>
 <p>Note that when reading the spreadsheet, the value of merged cells is only interpreted by the function once and assigned to the first record. Hence it is advisable to have the data in each row.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tidy-data.html#cb24-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_merge-cells_correct.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tidy-data.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_merge-cells_correct.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 4
+##      id species                 image     eventRemarks                          
+##   &lt;dbl&gt; &lt;chr&gt;                   &lt;chr&gt;     &lt;chr&gt;                                 
+## 1     1 Charcotia obesa         img_CO_AP 2 species are captured in the same im…
+## 2     2 Amphioplus peregrinator img_CO_AP 2 species are captured in the same im…
+## 3     3 Amphioplus peregrinator img_AP_3  &lt;NA&gt;                                  
+## 4     4 Amphioplus peregrinator img_AP_4  &lt;NA&gt;</code></pre>
 </div>
-<div id="placing-comments-or-units-in-cells" class="section level3">
+<div id="placing-comments-or-units-in-cells" class="section level3" number="3.2.7">
 <h3><span class="header-section-number">3.2.7</span> <a href="tidy-data.html#placing-comments-or-units-in-cells">Placing comments or units in cells</a></h3>
 <p>Example: A coordinate of a field site was not recorded from GPS device while in the field. The coordinate is later on included the data with a comment to indicate that the coordinate is obtained from a map.</p>
 <p><img src="figures/tidy-data_comment-cells.png" /></p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tidy-data.html#cb25-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_comment-cells.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tidy-data.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_comment-cells.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 3
+##   locality          decimalLatitude decimalLongitude
+##   &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;
+## 1 Admiralty bay               -62.2            -58.4
+## 2 Admiralty bay               -62.2            -58.4
+## 3 Bransfield Strait           -62.9            -58.4
+## 4 Bransfield Strait           -63.5            -60.4</code></pre>
 <p>Note that the comment is not visible in the data when read by R.</p>
 <p>Solution: Excel comments are not readable by most analysis software. To resolve this, create another field in the table to add notes or flag this cells.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tidy-data.html#cb26-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_comment-to-column.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tidy-data.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_comment-to-column.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 4
+##   locality          decimalLatitude decimalLongitude eventRemarks               
+##   &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt; &lt;chr&gt;                      
+## 1 Admiralty bay               -62.2            -58.4 &lt;NA&gt;                       
+## 2 Admiralty bay               -62.2            -58.4 &lt;NA&gt;                       
+## 3 Bransfield Strait           -62.9            -58.4 coordinates obtained from …
+## 4 Bransfield Strait           -63.5            -60.4 &lt;NA&gt;</code></pre>
 <p>Similarly, do not include units in the same cell that contains the measurement value. Ideally, all measurements taken should be in the same unit. If for some reason they aren’t, create another field to specify the unit.</p>
 </div>
-<div id="entering-more-than-one-piece-of-information-in-a-cell" class="section level3">
+<div id="entering-more-than-one-piece-of-information-in-a-cell" class="section level3" number="3.2.8">
 <h3><span class="header-section-number">3.2.8</span> <a href="tidy-data.html#entering-more-than-one-piece-of-information-in-a-cell">Entering more than one piece of information in a cell</a></h3>
 <p>Example: Recording coordinates in a single column.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tidy-data.html#cb27-1"></a><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-value-per-cell.xlsx&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tidy-data.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_multi-value-per-cell.xlsx&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 3
+##   locality          coordinate        scientificName 
+##   &lt;chr&gt;             &lt;chr&gt;             &lt;chr&gt;          
+## 1 Admiralty bay     -62.1996 -58.3763 charcotia obesa
+## 2 Admiralty bay     -62.2032 -58.3908 charcotia obesa
+## 3 Bransfield Strait -63.5236 -60.429  amphipoda</code></pre>
 <p>Solution:</p>
 <p>While it is tempting to record a coordinate in a column, it is not a good practice for several reasons:</p>
 <ul>
@@ -339,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Including multiple values in a cell limits the ways in which you can analyze your data. It is better to split the field <code>coordinate</code> into <code>decimalLatitude</code> and <code>decimalLongitude</code> as shown in the figure below.</p>
 <p><img src="figures/tidy-data_multi-value-to-column.png" /></p>
 </div>
-<div id="using-problematic-field-names" class="section level3">
+<div id="using-problematic-field-names" class="section level3" number="3.2.9">
 <h3><span class="header-section-number">3.2.9</span> <a href="tidy-data.html#using-problematic-field-names">Using problematic field names</a></h3>
 <p>Problematic field names include field names which has one or more of the followings:</p>
 <table>
@@ -370,8 +465,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>For instance, importing a spreadsheet with field names that begin with number, contain spaces and special character as shown in figure below with <code>read.xlsx</code> function from <code>xlsx</code> package will lead to a change in field names.</p>
 <p><img src="figures/tidy-data_problematic-field-names.png" /></p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tidy-data.html#cb28-1"></a><span class="kw">library</span>(xlsx)</span>
-<span id="cb28-2"><a href="tidy-data.html#cb28-2"></a><span class="kw">read.xlsx</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx&quot;</span>), <span class="dt">sheetIndex =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tidy-data.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xlsx)</span>
+<span id="cb12-2"><a href="tidy-data.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">read.xlsx</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx&quot;</span>), <span class="at">sheetIndex =</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>##   X1_id X2.scientific.name X...individual.
+## 1     1    charcotia obesa               2
+## 2     2    charcotia obesa               3
+## 3     3          amphipoda               0</code></pre>
 <p>We recommend to use underscores (<code>_</code>) as alternative to spaces or consider writing field names in camel case (e.g.: exampleFileName) to improve readability. Abbreviations might make sense temporarily but it maybe hard to recalled after a prolonged period of time. Units can be included in field name to avoid confusion. (e.g. minimumDepthInMeters)</p>
 <table>
 <thead>
@@ -405,20 +504,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </div>
-<div id="using-special-characters-in-data" class="section level3">
+<div id="using-special-characters-in-data" class="section level3" number="3.2.10">
 <h3><span class="header-section-number">3.2.10</span> <a href="tidy-data.html#using-special-characters-in-data">Using special characters in data</a></h3>
 <p>Using spreadsheet as a word processor when entering data by including line breaks, em-dashes, non-standard characters such as (left- or right-aligned quotation marks) not only makes the data less readable,</p>
 <p><img src="figures/tidy-data_special-char.png" /></p>
 <p>The data looks fine in the excel file above. However when reading the file into excel, following happens. The carriage of the label becomes <code>\r\n_x000D_</code> when read by R.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tidy-data.html#cb29-1"></a>special_char &lt;-<span class="st"> </span><span class="kw">read_excel</span>(<span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_special-char.xlsx&quot;</span>))</span>
-<span id="cb29-2"><a href="tidy-data.html#cb29-2"></a>special_char</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tidy-data.html#cb14-1" aria-hidden="true" tabindex="-1"></a>special_char <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_spreadsheets/tidy-data_special-char.xlsx&quot;</span>))</span>
+<span id="cb14-2"><a href="tidy-data.html#cb14-2" aria-hidden="true" tabindex="-1"></a>special_char</span></code></pre></div>
+<pre><code>## # A tibble: 1 × 5
+##   organismID measurementType      measurementValue measurementUnit label        
+##        &lt;dbl&gt; &lt;chr&gt;                           &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;        
+## 1         26 The δ13C measured i…            -15.2 per mille       &quot;organismID:…</code></pre>
 <p>When the data frame is being written into a tab separated value file and read back into R, <code>\r\n</code> is treated as new line when writing the file.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tidy-data.html#cb30-1"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb30-2"><a href="tidy-data.html#cb30-2"></a>file_path &lt;-<span class="st"> </span><span class="kw">here</span>(<span class="st">&quot;examples/tidy-data_written/tidy-data_special-char.txt&quot;</span>)</span>
-<span id="cb30-3"><a href="tidy-data.html#cb30-3"></a><span class="kw">write_tsv</span>(special_char, file_path)</span>
-<span id="cb30-4"><a href="tidy-data.html#cb30-4"></a><span class="kw">read_tsv</span>(file_path)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tidy-data.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb16-2"><a href="tidy-data.html#cb16-2" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="fu">here</span>(<span class="st">&quot;examples/tidy-data_written/tidy-data_special-char.txt&quot;</span>)</span>
+<span id="cb16-3"><a href="tidy-data.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(special_char, file_path)</span>
+<span id="cb16-4"><a href="tidy-data.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">read_tsv</span>(file_path)</span></code></pre></div>
+<pre><code>## Warning: One or more parsing issues, see `problems()` for details</code></pre>
+<pre><code>## # A tibble: 2 × 5
+##   organismID         measurementType      measurementValue measurementUnit label
+##   &lt;chr&gt;              &lt;chr&gt;                           &lt;dbl&gt; &lt;chr&gt;           &lt;chr&gt;
+## 1 26                 The δ13C measured i…            -15.2 per mille       orga…
+## 2 _x000D_The δ13C m… &lt;NA&gt;                             NA   &lt;NA&gt;            &lt;NA&gt;</code></pre>
 </div>
-<div id="inclusion-of-metadata-in-data-table" class="section level3">
+<div id="inclusion-of-metadata-in-data-table" class="section level3" number="3.2.11">
 <h3><span class="header-section-number">3.2.11</span> <a href="tidy-data.html#inclusion-of-metadata-in-data-table">Inclusion of metadata in data table</a></h3>
 <p>Clear field names of a data table is a good practice, however the amount of information that it can hold is limited and over time, the information will be loss if it is not well documented. The chances that you will remember what the field names means after a prolonged period of time is slim. On the other hand, a good documentation helps the others to understand your data, verify your findings and to review your works.</p>
 <p>However, the data about your data (metadata) should not be contained in the data file itself because this information is not data. Including it within the same file could disrupt how computer programs interpret your data file. It is better to store this metadata in a separate file in the same directory as your data file, preferably with a name that clearly associates it with your data file.</p>
@@ -429,7 +538,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>whether they supercede or are superceded by previous files</li>
 </ul>
 </div>
-<div id="date-formatting" class="section level3">
+<div id="date-formatting" class="section level3" number="3.2.12">
 <h3><span class="header-section-number">3.2.12</span> <a href="tidy-data.html#date-formatting">Date formatting</a></h3>
 <p>If you are using spreadsheet program such as microsoft excel to manage date data, it is important to understand how Excel treats this piece of information. Data Carpentry has a <a href="https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/index.html">chapter</a> that explains this very well.</p>
 <p>To summarize, dates are stored as number of days (integers) from a <a href="https://docs.microsoft.com/en-US/office/troubleshoot/excel/1900-and-1904-date-system">default of December 31, 1899 or December 31, 1903</a> in Excel. It has its pros and cons but because different version of Excel could have different default values and formats, we recommend the following when storing dates in excel.</p>
@@ -465,7 +574,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 
-
 </div>
 </div>
 </div>
@@ -475,7 +583,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="organization.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="data-quality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="example.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

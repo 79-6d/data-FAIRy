@@ -2,7 +2,11 @@
 
 There are numerous ways to check your data. Throughout our experience, we gather some tools that we used when we check the quality of biodiversity data that we received. Please note that the tools will change over time.
 
-## Programs we love
+## Applications we love
+
+
+
+### Dataset overview
 
 - [Open Refine](https://openrefine.org/) 
 
@@ -10,10 +14,7 @@ OpenRefine does not change your original data. All actions are logged in OpenRef
 
 OpenRefine has many more features. Data Carpentry has an [excellent lesson](https://datacarpentry.org/OpenRefine-ecology-lesson/) on using OpenRefine to clean data for ecologists.
 
-
-
-
-## Taxa
+### Taxa
 
 - [WoRMS Taxon match](http://marinespecies.org/aphia.php?p=match)
 

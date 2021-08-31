@@ -1,9 +1,8 @@
 base
-here
-readxl
-xlsx
 knitr
 kableExtra
+here
+readxl
 tidyverse
 ggplot2
 tibble
@@ -13,3 +12,4 @@ purrr
 dplyr
 stringr
 forcats
+xlsx

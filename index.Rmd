@@ -35,18 +35,6 @@ If dependencies are not automatically installed by `renv` when you open `data-fa
 renv::restore()
 ```
 
-If necessary, update the packages in renv to the latest version by running 
-
-```{r eval=FALSE}
-renv::update()
-```
-
-To snapshot the state of project library to the lockfile, run: 
-
-```{r eval=FALSE}
-renv::snapshot()
-```
-
 then run the following lines to build the book:
 
 ```{r eval=FALSE, message=FALSE}

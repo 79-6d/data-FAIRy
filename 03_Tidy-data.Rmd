@@ -30,11 +30,6 @@ As discussed in [R for Data Science](https://r4ds.had.co.nz/tidy-data.html#tidy-
 
 ## Common spreadsheets mistakes
 
-This section contains content adapted from:
-
-- [Data Organization in Spreadsheets for Ecologists from Data Carpentry](https://datacarpentry.org/spreadsheet-ecology-lesson/02-common-mistakes/index.html)
-- [Data Organization in Spreadsheets](https://doi.org/10.1080/00031305.2017.1375989)
-
 Common spreadsheets mistakes:
 
 - [Using multiple tables](#using-multiple-tables)
@@ -57,15 +52,13 @@ Creating multiple data tables within one spreadsheet confuses the computer as fa
 
 ![Figure: Example of spreadsheet usign multiple tables](./figures/tidy-data_multi-tables.png)
 
-```{r message=FALSE, results = "asis"}
+```{r echo=TRUE, message=FALSE, paged.print=TRUE, results=TRUE}
 library(readxl)
 library(here)
 library(tidyverse)
 
 # extract row where fieldNumber == S3
-df <- read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3")
-
-print(knitr::kable(head(df)))
+read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3")
 ```
 
 In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 
@@ -86,7 +79,7 @@ Most of the time adding another column to the original spreadsheet could resolve
 
 There’s a difference between a zero and a blank cell in a spreadsheet to the computer:
 
-- a zero is an actual data. You measured or counted it. 
+- a zero is an actual data/value. You measured or counted it. 
 - A blank cell is a null (missing) value, meaning that it wasn't measured.
 
 The spreadsheets or statistical programs will likely misinterpret blank cells that you intend to be zeros. By not entering the value of your observation, you are telling your computer to represent that data as unknown or missing (null). This can cause problems with subsequent calculations or analyses. 
@@ -128,13 +121,13 @@ Example: Cell merging
 
 Merging cells could confuse the computer to see associations in data. Merged cells will make the data unreadable by statistical software.
 
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_merge-cells.xlsx"))
 ```
 
 Note that when reading the spreadsheet, the value of merged cells is only interpreted by the function once and assigned to the first record. Hence it is advisable to have the data in each row.
 
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_merge-cells_correct.xlsx"))
 ```
 
@@ -144,14 +137,14 @@ Example: A coordinate of a field site was not recorded from GPS device while in 
 
 ![](./figures/tidy-data_comment-cells.png)
 
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_comment-cells.xlsx"))
 ```
 Note that the comment is not visible in the data when read by R.
 
 Solution: Excel comments are not readable by most analysis software. To resolve this, create another field in the table to add notes or flag this cells. 
 
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_comment-to-column.xlsx"))
 ```
 
@@ -161,7 +154,7 @@ Similarly, do not include units in the same cell that contains the measurement v
 
 Example: Recording coordinates in a single column.
 
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-value-per-cell.xlsx"))
 ```
 
@@ -190,7 +183,7 @@ special characters ($, @, %, #, &, *, (, ), !, /, etc.) | often have special mea
 For instance, importing a spreadsheet with field names that begin with number, contain spaces and special character as shown in figure below with `read.xlsx` function from `xlsx` package will lead to a change in field names.
 
 ![](./figures/tidy-data_problematic-field-names.png)
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 library(xlsx)
 read.xlsx(here("examples/tidy-data_spreadsheets/tidy-data_problematic-field-names.xlsx"), sheetIndex = 1)
 ```
@@ -212,13 +205,13 @@ Using spreadsheet as a word processor when entering data by including line break
 
 The data looks fine in the excel file above. However when reading the file into excel, following happens. The carriage of the label becomes `\r\n_x000D_` when read by R.
 
-```{r}
+```{r echo=TRUE, paged.print=TRUE}
 special_char <- read_excel(here("examples/tidy-data_spreadsheets/tidy-data_special-char.xlsx"))
 special_char
 ```
 When the data frame is being written into a tab separated value file and read back into R, `\r\n` is treated as new line when writing the file. 
 
-```{r message=FALSE}
+```{r echo=TRUE, message=FALSE, paged.print=TRUE}
 library(tidyverse)
 file_path <- here("examples/tidy-data_written/tidy-data_special-char.txt")
 write_tsv(special_char, file_path)
@@ -228,7 +221,7 @@ read_tsv(file_path)
 
 ### [Inclusion of metadata in data table](#inclusion-of-metadata-in-data-table)
 
-Clear field names of a data table is a good practice, however the amount of information that it can hold is limited and over time, the information will be loss if it is not well documented. The chances that you will remember what the field names means after a prolonged period of time is slim. On the other hand, a good documentation helps the others to understand your data, verify your findings and to review your works.
+Clear field names of a data table is a good practice, however the amount of information that it can hold is limited and over time, the information will be lost if it is not well documented. The chances that you will remember what the field names means after a prolonged period of time is slim. On the other hand, a good documentation helps the others to understand your data, verify your findings and to review your works.
 
 However, the data about your data (metadata) should not be contained in the data file itself because this information is not data. Including it within the same file could disrupt how computer programs interpret your data file. It is better to store this metadata in a separate file in the same directory as your data file, preferably with a name that clearly associates it with your data file.
 
@@ -242,7 +235,7 @@ Additionally, file or database level metadata should contains information below:
 
 If you are using spreadsheet program such as microsoft excel to manage date data, it is important to understand how Excel treats this piece of information. Data Carpentry has a [chapter](https://datacarpentry.org/spreadsheet-ecology-lesson/03-dates-as-data/index.html) that explains this very well.
 
-To summarize, dates are stored as number of days (integers) from a [default of December 31, 1899 or December 31, 1903](https://docs.microsoft.com/en-US/office/troubleshoot/excel/1900-and-1904-date-system) in Excel. It has its pros and cons but because different version of Excel could have different default values and formats, we recommend the following when storing dates in excel.
+To summarize, dates are stored as number of days (integers) from a [default of December 31, 1899 or December 31, 1903](https://docs.microsoft.com/en-US/office/troubleshoot/excel/1900-and-1904-date-system) in Excel. It has its pros and cons but because different version of Excel could have different default values and formats, we recommend the following format when storing dates in excel.
 
 Split the date into year, month, day or storing dates as a single string in the form of `YYYYMMDD`.
 

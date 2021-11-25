@@ -51,6 +51,7 @@ Common spreadsheets mistakes:
 Creating multiple data tables within one spreadsheet confuses the computer as false associations between things are created for the computer, which interpret each row as an observation. Same field name is also probably being used in multiple places, which will make it harder for you to tidy the data into a usable form. 
 
 ![Figure: Example of spreadsheet usign multiple tables](./figures/tidy-data_multi-tables.png)
+In the example above, the computer will see rrow 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 
 
 ```{r echo=TRUE, message=FALSE, paged.print=TRUE, results=TRUE}
 library(readxl)
@@ -61,7 +62,6 @@ library(tidyverse)
 read_excel(here("examples/tidy-data_spreadsheets/tidy-data_multi-tables.xlsx")) %>% filter(fieldNumber == "S3")
 ```
 
-In the example above, the computer will see (for example) row 8 and assume that all columns A-L refer to the same sample. However, this row represents 2 distinct samples (Charcotia obesa from fieldNumber S3 and Abyssorchomene charcoti from fieldNumber S6), as well as some calculated summary statistics (an average (avg) and standard deviation) for species 1 from fieldNumber S3, S4 and S5. 
 
 ### [Using multiple tabs](#using-multiple-tabs)
 
@@ -71,8 +71,6 @@ This isn't good practice for two reasons:
 
 1) Inconsistencies are more likely to be introduced into your data
 2) Extra step is needed to combine all data from separate tabs into a single data table before analysis. You will have to explicitly tell the computer how to combine tabs - and if the tabs are inconsistently formatted, you might even have to do it manually.
-
-Most of the time adding another column to the original spreadsheet could resolve the problem. In the example mentioned, adding a `date` column could avoid having multiple tabs of measurements for each day.
 
 
 ### [Not filling in zeros](#not-filling-in-zeros)

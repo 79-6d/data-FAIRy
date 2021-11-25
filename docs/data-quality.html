@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Data Quality | Data FAIRy</title>
+  <title>Chapter 4 Data Quality | Data FAIRy</title>
   <meta name="description" content="Biological data publishing guidelines" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Data Quality | Data FAIRy" />
+  <meta property="og:title" content="Chapter 4 Data Quality | Data FAIRy" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Data Quality | Data FAIRy" />
+  <meta name="twitter:title" content="Chapter 4 Data Quality | Data FAIRy" />
   
   <meta name="twitter:description" content="Biological data publishing guidelines" />
   
@@ -24,14 +24,14 @@
 <meta name="author" content="Anton Van de Putte, Yi-Ming Gan, Maxime Sweetlove" />
 
 
-<meta name="date" content="2021-09-02" />
+<meta name="date" content="2021-11-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="example.html"/>
+<link rel="prev" href="tidy-data.html"/>
 <link rel="next" href="useful-online-resources.html"/>
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -146,17 +146,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1.1" data-path="organization.html"><a href="organization.html#why-does-it-matter-to-have-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.1</b> Why does it matter to have a good project structure?</a></li>
 <li class="chapter" data-level="2.1.2" data-path="organization.html"><a href="organization.html#why-is-this-a-good-project-structure"><i class="fa fa-check"></i><b>2.1.2</b> Why is this a good project structure?</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.2</b> Organizational tips</a>
+<li class="chapter" data-level="2.2" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.2</b> Naming files</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="organization.html"><a href="organization.html#a-quarantine-directory"><i class="fa fa-check"></i><b>2.2.1</b> <span>A quarantine directory</span></a></li>
-<li class="chapter" data-level="2.2.2" data-path="organization.html"><a href="organization.html#revoke-write-permission-to-raw-data-files"><i class="fa fa-check"></i><b>2.2.2</b> <span>Revoke write permission to raw data files</span></a></li>
-<li class="chapter" data-level="2.2.3" data-path="organization.html"><a href="organization.html#a-prose-directory"><i class="fa fa-check"></i><b>2.2.3</b> <span>A prose directory</span></a></li>
+<li class="chapter" data-level="2.2.1" data-path="organization.html"><a href="organization.html#machine-readable"><i class="fa fa-check"></i><b>2.2.1</b> <span>Machine readable</span></a></li>
+<li class="chapter" data-level="2.2.2" data-path="organization.html"><a href="organization.html#human-readable"><i class="fa fa-check"></i><b>2.2.2</b> <span>Human readable</span></a></li>
+<li class="chapter" data-level="2.2.3" data-path="organization.html"><a href="organization.html#orderable"><i class="fa fa-check"></i><b>2.2.3</b> <span>Orderable</span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#naming-files"><i class="fa fa-check"></i><b>2.3</b> Naming files</a>
+<li class="chapter" data-level="2.3" data-path="organization.html"><a href="organization.html#organizational-tips"><i class="fa fa-check"></i><b>2.3</b> Organizational tips</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="organization.html"><a href="organization.html#machine-readable"><i class="fa fa-check"></i><b>2.3.1</b> <span>Machine readable</span></a></li>
-<li class="chapter" data-level="2.3.2" data-path="organization.html"><a href="organization.html#human-readable"><i class="fa fa-check"></i><b>2.3.2</b> <span>Human readable</span></a></li>
-<li class="chapter" data-level="2.3.3" data-path="organization.html"><a href="organization.html#orderable"><i class="fa fa-check"></i><b>2.3.3</b> <span>Orderable</span></a></li>
+<li class="chapter" data-level="2.3.1" data-path="organization.html"><a href="organization.html#a-quarantine-directory"><i class="fa fa-check"></i><b>2.3.1</b> <span>A quarantine directory</span></a></li>
+<li class="chapter" data-level="2.3.2" data-path="organization.html"><a href="organization.html#revoke-write-permission-to-raw-data-files"><i class="fa fa-check"></i><b>2.3.2</b> <span>Revoke write permission to raw data files</span></a></li>
+<li class="chapter" data-level="2.3.3" data-path="organization.html"><a href="organization.html#a-prose-directory"><i class="fa fa-check"></i><b>2.3.3</b> <span>A prose directory</span></a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="tidy-data.html"><a href="tidy-data.html"><i class="fa fa-check"></i><b>3</b> Tidy data</a>
@@ -178,21 +178,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.12" data-path="tidy-data.html"><a href="tidy-data.html#date-formatting"><i class="fa fa-check"></i><b>3.2.12</b> <span>Date formatting</span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="example.html"><a href="example.html"><i class="fa fa-check"></i><b>4</b> example</a></li>
-<li class="chapter" data-level="5" data-path="data-quality.html"><a href="data-quality.html"><i class="fa fa-check"></i><b>5</b> Data Quality</a>
+<li class="chapter" data-level="4" data-path="data-quality.html"><a href="data-quality.html"><i class="fa fa-check"></i><b>4</b> Data Quality</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="data-quality.html"><a href="data-quality.html#applications-we-love"><i class="fa fa-check"></i><b>5.1</b> Applications we love</a>
+<li class="chapter" data-level="4.1" data-path="data-quality.html"><a href="data-quality.html#applications-we-love"><i class="fa fa-check"></i><b>4.1</b> Applications we love</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="data-quality.html"><a href="data-quality.html#dataset-overview"><i class="fa fa-check"></i><b>5.1.1</b> Dataset overview</a></li>
-<li class="chapter" data-level="5.1.2" data-path="data-quality.html"><a href="data-quality.html#taxa"><i class="fa fa-check"></i><b>5.1.2</b> Taxa</a></li>
+<li class="chapter" data-level="4.1.1" data-path="data-quality.html"><a href="data-quality.html#dataset-overview"><i class="fa fa-check"></i><b>4.1.1</b> Dataset overview</a></li>
+<li class="chapter" data-level="4.1.2" data-path="data-quality.html"><a href="data-quality.html#taxa"><i class="fa fa-check"></i><b>4.1.2</b> Taxa</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="data-quality.html"><a href="data-quality.html#geospatial"><i class="fa fa-check"></i><b>5.2</b> Geospatial</a></li>
+<li class="chapter" data-level="4.2" data-path="data-quality.html"><a href="data-quality.html#geospatial"><i class="fa fa-check"></i><b>4.2</b> Geospatial</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="useful-online-resources.html"><a href="useful-online-resources.html"><i class="fa fa-check"></i><b>6</b> Useful online resources</a>
+<li class="chapter" data-level="5" data-path="useful-online-resources.html"><a href="useful-online-resources.html"><i class="fa fa-check"></i><b>5</b> Useful online resources</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="useful-online-resources.html"><a href="useful-online-resources.html#courses-and-webinars"><i class="fa fa-check"></i><b>6.1</b> Courses and webinars</a></li>
-<li class="chapter" data-level="6.2" data-path="useful-online-resources.html"><a href="useful-online-resources.html#best-practices"><i class="fa fa-check"></i><b>6.2</b> Best practices</a></li>
-<li class="chapter" data-level="6.3" data-path="useful-online-resources.html"><a href="useful-online-resources.html#others"><i class="fa fa-check"></i><b>6.3</b> Others</a></li>
+<li class="chapter" data-level="5.1" data-path="useful-online-resources.html"><a href="useful-online-resources.html#courses-and-webinars"><i class="fa fa-check"></i><b>5.1</b> Courses and webinars</a></li>
+<li class="chapter" data-level="5.2" data-path="useful-online-resources.html"><a href="useful-online-resources.html#best-practices"><i class="fa fa-check"></i><b>5.2</b> Best practices</a></li>
+<li class="chapter" data-level="5.3" data-path="useful-online-resources.html"><a href="useful-online-resources.html#others"><i class="fa fa-check"></i><b>5.3</b> Others</a></li>
 </ul></li>
 </ul>
 
@@ -211,29 +210,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="data-quality" class="section level1" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Data Quality</h1>
+<div id="data-quality" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Data Quality</h1>
 <p>There are numerous ways to check your data. Throughout our experience, we gather some tools that we used when we check the quality of biodiversity data that we received. Please note that the tools will change over time.</p>
-<div id="applications-we-love" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Applications we love</h2>
-<div id="dataset-overview" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Dataset overview</h3>
+<div id="applications-we-love" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Applications we love</h2>
+<div id="dataset-overview" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Dataset overview</h3>
 <ul>
 <li><a href="https://openrefine.org/">Open Refine</a></li>
 </ul>
 <p>OpenRefine does not change your original data. All actions are logged in OpenRefine and can be easily reversed. Since the actions are logged and data is not modified, the actions can be easily reproduced.</p>
 <p>OpenRefine has many more features. Data Carpentry has an <a href="https://datacarpentry.org/OpenRefine-ecology-lesson/">excellent lesson</a> on using OpenRefine to clean data for ecologists.</p>
 </div>
-<div id="taxa" class="section level3" number="5.1.2">
-<h3><span class="header-section-number">5.1.2</span> Taxa</h3>
+<div id="taxa" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Taxa</h3>
 <ul>
 <li><a href="http://marinespecies.org/aphia.php?p=match">WoRMS Taxon match</a></li>
 </ul>
 <p>We work predominantly with marine data from Southern Ocean. WoRMS species information backbone is integrated into GBIF backbone taxonomy and is the taxonomic backbone used by OBIS. Matching the scientific name to WoRMS before publishing the biodiversity data improves its interoperability.</p>
 </div>
 </div>
-<div id="geospatial" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Geospatial</h2>
+<div id="geospatial" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Geospatial</h2>
 <ul>
 <li><a href="https://www.qgis.org/en/site/index.html">QGIS</a></li>
 </ul>
@@ -249,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="example.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tidy-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="useful-online-resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

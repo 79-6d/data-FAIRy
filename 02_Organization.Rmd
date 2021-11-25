@@ -1,12 +1,14 @@
 # Organization
 
-This section include key points from the following resources:
+This section is all about organizing files and folders, which include key points from the following resources:
 
 1. [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
 2. Jenny Bryan's [slides about organization](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf)
 3. Jenny Bryan's [slides about naming things](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/naming-slides/naming-slides.pdf)
 
 ## Project structure
+
+Before we begin data entry, it is important to have an easy-to-manage directory structure to store files at appropriate location. 
 
 ### Why does it matter to have a good project structure?
 
@@ -44,32 +46,10 @@ This is a good project structure because:
 - Self explanatory: The file name and location are very informative about what it is, why it exists, how it relates to other files/directories.
 - It reflects the inputs, outputs and the flow of information.
 
-## Organizational tips
-
-A couple of tips from Jenny Bryan's [organization slides](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf) that are worth to be mentioned: 
-
-- [A quarantine directory](#a-quarantine-directory)
-- [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
-- [A prose directory](#a-prose-directory)
-
-### [A quarantine directory](#a-quarantine-directory)
-
-If your collaborator send you data with space-containing file names, data in spreadsheet etc that do not fits your standard naming system and practice, you can place those files in a quarantine directory.
-
-The renamed or exported plain text files can be move to your data directory. Record what you did in a README or comments in your code to remind yourself about the file's source, if it is from the outside world in a state that is not ready for your programmatic analysis.
-
-### [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
-
-So that it will not be accidentally edited by you or someone else.
-
-### [A prose directory](#a-prose-directory)
-
-Sometimes you need a folder to keep key emails, internal documentation, explanations or random documents received. Similar to the quarantine directory, the prose directory can be used to park these things without having to keep the same standard for file names and open formats.
-
 
 ## Naming files
 
-Jenny Bryan also has [good tips in naming files](https://speakerdeck.com/jennybc/how-to-name-files) summarized below.
+Having good file names would give you an idea about the information you need about the file. Jenny Bryan has [good tips in naming files](https://speakerdeck.com/jennybc/how-to-name-files) summarized below.
 
 Good file names are:
 
@@ -100,7 +80,7 @@ Machine readable file names will enable you to easily search for a file or a gro
 
 > A regular expression is a sequence of characters that specifies a search pattern. (Wikipedia)
 
-To be regular expression and globbing friendly, file names should avoid having:
+To be regular expression and globbing friendly, file names should:
 
 **Avoid:**
 
@@ -147,7 +127,7 @@ tbl
 
 ### [Human readable](#human-readable)
 
-File name that tells you about the file content saves you time. Similarly, using delimiters as mentioned above helps to make the file name more readable.
+File name that tells you about the file content saves you time. Similarly, using delimiters as mentioned above helps to make the file names more readable.
 
 These file names contain the same information but delimited differently:
 
@@ -212,5 +192,27 @@ If the file names are not left pad with zeros, the order will not be chronologic
 11_myctophidae_diaphus-fragilis.jpg
 2_myctophidae_diaphus-agassizii.jpg
 ```
+
+## Organizational tips
+
+Here are a couple of quick tips from Jenny Bryan's [organization slides](http://www2.stat.duke.edu/~rcs46/lectures_2015/01-markdown-git/slides/organization-slides/organization-slides.pdf) that help to keep your files and folders organised aside from the tips mentioned above: 
+
+- [A quarantine directory](#a-quarantine-directory)
+- [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
+- [A prose directory](#a-prose-directory)
+
+### [A quarantine directory](#a-quarantine-directory)
+
+If your collaborator send you data with space-containing file names, data in spreadsheet etc that do not fits your standard naming system and practice, you can place those files in a quarantine directory.
+
+The renamed or exported plain text files can be move to your data directory. Record what you did in a README or comments in your code to remind yourself about the file's source, if it is from the outside world in a state that is not ready for your programmatic analysis.
+
+### [Revoke write permission to raw data files](#revoke-write-permission-to-raw-data-files)
+
+Revoking write permission to raw data files avoid the files to be be accidentally edited by you or someone else.
+
+### [A prose directory](#a-prose-directory)
+
+Sometimes you need a folder to keep key emails, internal documentation, explanations or random documents received. Similar to the quarantine directory, the prose directory can be used to park these things without having to keep the same standard for file names and open formats.
 
 

@@ -5,7 +5,6 @@ There are numerous ways to check your data. Throughout our experience, we gather
 ## Applications we love
 
 
-
 ### Dataset overview
 
 - [Open Refine](https://openrefine.org/) 

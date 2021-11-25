@@ -1,5 +1,5 @@
 # Introduction 
 
-The biodiversity.aq team has been helping researchers to clean and publish biodiversity data for years. We noticed that data management has been a challenge to everyone and we believe an improvement in data management could increase the efficiency of data cleaning process. Hence, we tried to compile a series of concepts that we think are helpful for scientists to manage their data.
+The biodiversity.aq team has been helping researchers to clean and publish biodiversity data for years. We noticed that data management has been a challenge to everyone and we believe a little improvement in data management could save a lot of time. Hence, we tried to compile a series of concepts that we think are helpful for scientists to manage their data.
 
 

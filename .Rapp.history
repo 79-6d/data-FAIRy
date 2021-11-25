@@ -1,0 +1,188 @@
+install.packages('IRkernel')
+IRkernel::installspec()
+IRkernel::installspec(user = FALSE)
+install.packages("ssh")
+require("ssh")
+?ssh_connect
+ssh_connect(host='antabif')
+ssh_connect(host="10.209.1.32")
+ssh_connect(host="10.209.1.32", verbose=TRUE)
+ssh_connect(host="10.209.1.32", keyfile="~/.ssh/id_rsa", verbose=TRUE)
+ssh_connect(host="antabif@10.209.1.32", keyfile="~/.ssh/id_rsa", verbose=TRUE)
+ssh_connect(host="antabif@10.209.1.32", keyfile="~/.ssh/id_rsa", passwd="antabif", verbose=TRUE)
+ssh_connect(host="antabif@10.209.1.32", keyfile="~/.ssh/id_rsa", passwd="asdf ", verbose=TRUE)
+ssh_connect(host="antabif@10.209.1.32:8000", keyfile="~/.ssh/id_rsa", passwd="asdf ", verbose=TRUE)
+ssh_key_info()
+ssh_connect(host="antabif@antabif", keyfile="~/.ssh/id_rsa", passwd="asdf ", verbose=4)
+ssh_connect(host="antabif@home.bebif.be", keyfile="~/.ssh/id_rsa", passwd="asdf ", verbose=4)
+ls
+load('ssh')
+require("ssh")
+ssh_connect(host='antabif@home.bebif.be')
+session <- ssh_connect(host='antabif@home.bebif.be')
+session
+?ssh_connect
+ssh_session_info(session)
+?ssh
+session
+sessionInfo
+ssh_disconnect
+ssh_disconnect()
+ssh_disconnect(session)
+ssh_connect(host="antabif@10.209.1.32:22")
+require("DBI")
+con <- DBI::dbConnect(drv=RPostgres::Postgres(),#
+                      user = “dev_rw”,#
+                      password = “bg_90gh2",#
+                      host     = “pg11.lan”,#
+                      port     = 5432,#
+                      dbname   = “biodiversityaq”)
+con <- DBI::dbConnect(drv=RPostgres::Postgres(), user = “dev_rw”, password = “bg_90gh2", host = “pg11.lan”, port = 5432, dbname   = “biodiversityaq”)
+?DBI
+library(DBI)#
+library(RPostgres)#
+system('ssh -l antabif antabif', intern=TRUE)
+seudo-terminal will not be allocated because stdin is not a terminal.> con <- DBI::dbConnect(drv=RPostgres::Postgres(),#
+                      user = "dev_rw",#
+                      password = "bg_90gh2",#
+                      host = "pg11.lan",#
+                      port     = 5432,#
+                      dbname   = "biodiversityaq")
+seudo-terminal will not be allocated because stdin is not a terminal.> con <- DBI::dbConnect(drv=RPostgres::Postgres(), user = "dev_rw", password = "bg_90gh2", host = "pg11.lan", dbname   = "biodiversityaq")
+session = ssh_connect("antabif@home.bebif.be")
+library(ssh)
+session = ssh_connect("antabif@home.bebif.be")
+??ssh_exec_wait(session, command = "sudo -u www-biodiversityaq zsh -l")
+??ssh_exec_wait
+??ssh_exec_wait(session, command = c("sudo -u www-biodiversityaq", "zsh -l"))
+??ssh_exec_wait(session, command = c('sudo -u www-biodiversityaq zsh -l'))
+ssh_exec_wait(session, command = c('sudo -u www-biodiversityaq zsh -l'))
+ssh_exec_wait(session, command = c('sudo -u www-antabifdp zsh -l'))
+session
+?ssh
+ssh_session_info(session)
+ssh_exec_wait(session, command = 'whoami')
+ssh_disconnect()
+ssh_disconnect(sessopm)
+ssh_disconnect(session)
+session = ssh_connect("antabif@home.bebif.be", verbose=4)
+ssh_exec_wait(session, command = 'sudo -u www-antabifdp zsh -l')
+ssh_disconnect(session)
+session = ssh_connect("antabif@home.bebif.be", passwd='antabif', verbose=4)
+ssh_exec_wait(session, command = 'sudo -u www-antabifdp zsh -l')
+ssh_disconnect(session)
+?system
+??dir
+getwd()
+system('ssh -l antabif antabif')
+system('ssh -l antabif antabif -T')
+ls
+system('ssh -l antabif antabif -tt')
+020 from jupiler.lan#
+FreeBSD 12.1-RELEASE-p1 GENERIC #
+Welcome to FreeBSD!#
+Release Notes, Errata: https://www.FreeBSD.org/releases/#
+Security Advisories:   https://www.FreeBSD.org/security/#
+FreeBSD Handbook:      https://www.FreeBSD.org/handbook/#
+FreeBSD FAQ:           https://www.FreeBSD.org/faq/#
+Questions List: https://lists.FreeBSD.org/mailman/listinfo/freebsd-questions/#
+FreeBSD Forums:        https://forums.FreeBSD.org/#
+Documents installed with the system are in the /usr/local/share/doc/freebsd/#
+directory, or can be installed later with:  pkg install en-freebsd-doc#
+For other languages, replace "en" with a language code like de or fr.#
+Show the version of FreeBSD installed:  freebsd-version ; uname -a#
+Please include that output and any error messages when posting questions.#
+Introduction to manual pages:  man man#
+FreeBSD directory layout:      man hier#
+Edit /etc/motd to change this login announcement.#
+antabif% [?2004h                                                              sudo -u www-biodiversityaq zsh -l
+020 from jupiler.lan#
+FreeBSD 12.1-RELEASE-p1 GENERIC #
+Welcome to FreeBSD!#
+Release Notes, Errata: https://www.FreeBSD.org/releases/#
+Security Advisories:   https://www.FreeBSD.org/security/#
+FreeBSD Handbook:      https://www.FreeBSD.org/handbook/#
+FreeBSD FAQ:           https://www.FreeBSD.org/faq/#
+Questions List: https://lists.FreeBSD.org/mailman/listinfo/freebsd-questions/#
+FreeBSD Forums:        https://forums.FreeBSD.org/#
+Documents installed with the system are in the /usr/local/share/doc/freebsd/#
+directory, or can be installed later with:  pkg install en-freebsd-doc#
+For other languages, replace "en" with a language code like de or fr.#
+Show the version of FreeBSD installed:  freebsd-version ; uname -a#
+Please include that output and any error messages when posting questions.#
+Introduction to manual pages:  man man#
+FreeBSD directory layout:      man hier#
+Edit /etc/motd to change this login announcement.#
+antabif% [?2004h                                                              sudo -u www-biodiversityaq zsh -l#
+exit
+session <- ssh_connect('antabif@home.bebif.be'. verbose=2)
+session <- ssh_connect('antabif@home.bebif.be', verbose=2)
+session <- ssh_connect('antabif@home.bebif.be', passwd='antabif', verbose=2)
+sessopm
+session
+ssh_key_info(session)
+out <- ssh_exec_wait(session, command = 'whoami')
+print(out)
+session <- ssh_connect('antabif@home.bebif.be', verbose=2)
+ssh_key_info(session)
+ssh_disconnect(session)
+ssh_key_info(session)
+ssh_disconnect(session)
+session <- ssh_connect('antabif@home.bebif.be', verbose=2)
+ssh_key_info(session)
+ssh_disconnect(session)
+clear()
+clear
+?system2
+session <- ssh_connect('antabif@home.bebif.be', verbose=2)
+ssh_exec_wait(session, command = c('psql -h pg11.lan -U dev_rw biodiversityaq', '\dt'))
+ssh_exec_wait(session, command = c('psql -h pg11.lan -U dev_rw biodiversityaq', '\\dt'))
+ssh_session_info
+ssh_session_info(session)
+ssh_disconnect(session)
+session <- ssh_connect('antabif@home.bebif.be', password = 'antabif', verbose=2)
+session <- ssh_connect('antabif@home.bebif.be', passwd = 'antabif', verbose=2)
+ssh_exec_wait(session, command = c('psql -h pg11.lan -U dev_rw biodiversityaq', '\\dt'))
+ssh_disconnect(session)
+library(DBI)
+library(RPostgres)
+con <- dbConnect(drv=RPostgres::Postgres(), user="dev_rw", passwd="bg_90gh2", host="pg11.lan", port=6432, dbname="biodiversityaq")
+con <- dbConnect(drv=RPostgres::Postgres(), user="dev_rw", password="bg_90gh2", host="pg11.lan", port=6432, dbname="biodiversityaq")
+con <- dbConnect(drv=RPostgres::Postgres(), user="dev_rw", password="bg_90gh2", host="home.bebif.be", port=6432, dbname="biodiversityaq")
+library(ssh)
+library(DBI)
+library(RPostgres)
+?dbconnect
+?dbConnect
+con <- dbConnect(RPostgres::Postgres(), user="dev_rw", password="bg_90gh2", host="home.bebif.be", port=6432, dbname="biodiversityaq")
+con <- dbConnect(RPostgres::Postgres(), user="dev_rw", password="bg_90gh2", host="pg11.lan@home.bebif.be", port=6432, dbname="biodiversityaq")
+????RPostgres::Postgres()
+?RPostgres::Postgres()
+?ssh
+ssh_connect("antabif@home.bebif.be")
+ssh_session_info()
+c - ssh_connect("antabif@home.bebif.be")
+c = ssh_connect("antabif@home.bebif.be")
+ssh_session_info(c)
+library(DBI)
+db <- dbConnect(odbc::odbc(), "PostgreSQL")
+install.packages("odbc")
+db <- dbConnect(odbc::odbc(), "PostgreSQL Driver")
+db <- dbConnect(odbc::odbc(), "PostgreSQL")
+library(DBI)
+db <- dbConnect(odbc::odbc(), "PostgreSQL")
+getwd()
+setwd("/Users/biodiversityaq/Desktop/data-fairy/")
+renv::restore()
+library(knitr)#
+library(kableExtra)#
+#
+knitr::opts_chunk$set(cache = TRUE, warning = FALSE)#
+options(knitr.table.format = "html")#
+#
+showtbl <- function(z) kable_styling(knitr::kable(z), bootstrap_options = c("striped", "hover", "condensed"))
+library(here)#
+bookdown::render_book(here("index.Rmd"))
+install.packages("Pandoc")
+?rmarkdown::pandoc_available
+?rmarkdown::pandoc_available

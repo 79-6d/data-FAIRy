@@ -3,14 +3,14 @@ organization
 project-structure
 why-does-it-matter-to-have-a-good-project-structure
 why-is-this-a-good-project-structure
-organizational-tips
-a-quarantine-directory
-revoke-write-permission-to-raw-data-files
-a-prose-directory
 naming-files
 machine-readable
 human-readable
 orderable
+organizational-tips
+a-quarantine-directory
+revoke-write-permission-to-raw-data-files
+a-prose-directory
 tidy-data
 why-tidy-data
 common-spreadsheets-mistakes
@@ -26,7 +26,6 @@ using-problematic-field-names
 using-special-characters-in-data
 inclusion-of-metadata-in-data-table
 date-formatting
-example
 data-quality
 applications-we-love
 dataset-overview
